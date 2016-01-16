@@ -5,10 +5,15 @@ using System.IO;
 
 public class PortFolioApp : ModuleRules
 {
-    private string AssimpPath
-    {
-        get { return Path.GetFullPath(@"D:\Personal Dev Projects\Tools\assimp-3.1.1-win-binaries"); } // TODO ; FIXME!!!!!!
-    }
+    //private string AssimpPath
+    //{
+    //    get { return Path.GetFullPath(@"D:\Personal Dev Projects\Tools\assimp-3.1.1-win-binaries"); } // TODO ; FIXME!!!!!!
+    //}
+
+    //private string AssimpStaticPath
+    //{
+    //    get { return Path.GetFullPath(@"D:\Personal Dev Projects\PortFolioApp\Binaries\Win64"); } // TODO ; FIXME!!!!!!
+    //}
 
     public PortFolioApp(TargetInfo Target)
 	{
@@ -16,12 +21,14 @@ public class PortFolioApp : ModuleRules
 
 		PrivateDependencyModuleNames.AddRange(new string[] {  });
 
-		// Uncomment if you are using Slate UI
-	    PrivateDependencyModuleNames.AddRange(new string[] { "Slate", "SlateCore" });
+        PrivateDependencyModuleNames.AddRange(new string[] { "ProceduralMeshComponent" });
 
-        PublicAdditionalLibraries.Add(Path.Combine(AssimpPath, "lib64", "assimp.lib")); //TODO : FIXME MAYBE
+        // Uncomment if you are using Slate UI
+        PrivateDependencyModuleNames.AddRange(new string[] { "Slate", "SlateCore" });
 
-        PublicIncludePaths.Add(Path.Combine(AssimpPath, "include"));
+        //PublicAdditionalLibraries.Add(Path.Combine(AssimpPath, "lib64", "assimp.lib")); //TODO : FIXME MAYBE
+        //PublicAdditionalLibraries.Add(Path.Combine(AssimpStaticPath, "assimp.lib"));
+        //PublicIncludePaths.Add(Path.Combine(AssimpPath, "include"));
         // Uncomment if you are using online features
         // PrivateDependencyModuleNames.Add("OnlineSubsystem");
         // if ((Target.Platform == UnrealTargetPlatform.Win32) || (Target.Platform == UnrealTargetPlatform.Win64))

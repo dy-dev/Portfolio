@@ -3,8 +3,8 @@
 #pragma once
 
 #include "Components/ActorComponent.h"
+#include "ProceduralMeshComponent.h"
 #include "AssimpImporterComponent.generated.h"
-
 
 UCLASS(ClassGroup = (Custom), meta = (BlueprintSpawnableComponent))
 class PORTFOLIOAPP_API UAssimpImporterComponent : public UActorComponent
@@ -21,36 +21,50 @@ public:
 	// Called every frame
 	virtual void TickComponent(float DeltaTime, ELevelTick TickType, FActorComponentTickFunction* ThisTickFunction) override;
 
-	UPROPERTY(Transient, BlueprintReadWrite, Category = "3DLoader")
+	/**
+	Normals, Vertices, triangles and UVs describing the 3D model we want to import
+	*/
+	UPROPERTY(Transient, BlueprintReadWrite, Category = "3D Loader")
 		TArray<FVector> Vertices;
 
-	UPROPERTY(Transient, BlueprintReadWrite, Category = "3DLoader")
+	UPROPERTY(Transient, BlueprintReadWrite, Category = "3D Loader")
 		TArray<FVector> Normals;
 
-	UPROPERTY(Transient, BlueprintReadWrite, Category = "3DLoader")
+	UPROPERTY(Transient, BlueprintReadWrite, Category = "3D Loader")
 		TArray<int32> Triangles;
 
-	UPROPERTY(Transient, BlueprintReadWrite, Category = "3DLoader")
+	UPROPERTY(Transient, BlueprintReadWrite, Category = "3D Loader")
 		TArray<FVector2D> UVs;
 
-	UPROPERTY(Transient, BlueprintReadWrite, Category = "3DLoader")
-		bool inverseNormals;
+	UPROPERTY(Transient, BlueprintReadWrite, Category = "3D Loader")
+		bool InverseNormals;
 
-	UPROPERTY(Transient, BlueprintReadWrite, Category = "3DLoader")
-		int32 swapCoords;
+	//UPROPERTY(Transient, BlueprintReadWrite, Category = "3D Loader")
+	//	int32 swapCoords;
 
-	UPROPERTY(Transient, BlueprintReadWrite, Category = "3DLoader")
-		FString InternalFilePath;
-
-
-	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "3DLoader")
+	//Texture for the model
+	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "3D Loader")
 		UTexture2D* ModelTexture;
 
-	//~~~ BP Referenced Materials ~~~
-	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "3DLoader")
-		UMaterialInterface* MasterMaterialRef;
+	//Interface to the material we need to modify
+	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "3D Loader")
+		UMaterialInterface* InterfaceToMainMaterial;
 
-	UFUNCTION(BlueprintCallable, Category = "File Loader")
-		bool Load(const FString& FilePath);
+	//Path to the 3D model
+	UPROPERTY(Transient, BlueprintReadWrite, Category = "3D Loader")
+		FString MeshPath;
 
+	//Useful for Debug
+	UPROPERTY(Transient, BlueprintReadWrite, Category = "3D Loader")
+		FString InternalFilePath;
+
+	UFUNCTION(BlueprintCallable, Category = "3D Loader")
+		bool Load3DModel(const FString& FilePath);
+
+	UFUNCTION(BlueprintCallable, Category = "3D Loader")
+		void SetMaterialToProceduralMeshComp(UProceduralMeshComponent* procMeshComp);
+
+private:
+	void CreateInterfaceToMainMaterial();
+	void LoadTexture(const FString& FilePath);
 };

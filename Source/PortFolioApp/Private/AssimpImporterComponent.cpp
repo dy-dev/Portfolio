@@ -9,11 +9,14 @@
 #include "Developer/ImageWrapper/Public/Interfaces/IImageWrapper.h"
 #include "Developer/ImageWrapper/Public/Interfaces/IImageWrapperModule.h"
 
+#include <string>       // std::string
+#include <iostream>     // std::cout
+#include <sstream> 
+
 namespace Assimp
 {
 	class Importer;
 }
-
 
 // Sets default values for this component's properties
 UAssimpImporterComponent::UAssimpImporterComponent()
@@ -23,50 +26,26 @@ UAssimpImporterComponent::UAssimpImporterComponent()
 	bWantsBeginPlay = true;
 	PrimaryComponentTick.bCanEverTick = true;
 
-	static ConstructorHelpers::FObjectFinder<UMaterial> materialOb_PinkPlasma(TEXT("Material'/Game/Bats_Mat.Bats_Mat'"));
-	if (materialOb_PinkPlasma.Object != NULL)
-	{
-		MasterMaterialRef = (UMaterial*)materialOb_PinkPlasma.Object;
-	}
+	CreateInterfaceToMainMaterial();
 }
 
+void UAssimpImporterComponent::CreateInterfaceToMainMaterial()
+{
+	static ConstructorHelpers::FObjectFinder<UMaterial> mainMaterial(TEXT("Material'/Game/Blueprint/AssetMaterial.AssetMaterial'"));
+	if (mainMaterial.Object != NULL)
+	{
+		InterfaceToMainMaterial = (UMaterial*)mainMaterial.Object;
+	}
+}
 
 // Called when the game starts
 void UAssimpImporterComponent::BeginPlay()
 {
 	Super::BeginPlay();
-	inverseNormals = false;
-	swapCoords = 0;
 	InternalFilePath = FPaths::Combine(*FPaths::GameSavedDir(), TEXT("DiapoAssets/Bird/BeeBird.obj"));
-	// ...
-	IImageWrapperModule& ImageWrapperModule = FModuleManager::LoadModuleChecked<IImageWrapperModule>(FName("ImageWrapper"));
-	// Note: PNG format.  Other formats are supported
-	IImageWrapperPtr ImageWrapper = ImageWrapperModule.CreateImageWrapper(EImageFormat::PNG);
-	TArray<uint8> RawFileData;
-	FString TexturePath = FPaths::GetPath(InternalFilePath) / FPaths::GetBaseFilename(InternalFilePath) + FString(".png");
-	std::string strname(TCHAR_TO_ANSI(*TexturePath));
-	if (FFileHelper::LoadFileToArray(RawFileData, *TexturePath))
-	{
-		if (ImageWrapper.IsValid() && ImageWrapper->SetCompressed(RawFileData.GetData(), RawFileData.Num()))
-		{
-			const TArray<uint8>* UncompressedBGRA = NULL;
-			if (ImageWrapper->GetRaw(ERGBFormat::BGRA, 8, UncompressedBGRA))
-			{
-				ModelTexture = UTexture2D::CreateTransient(ImageWrapper->GetWidth(), ImageWrapper->GetHeight(), PF_B8G8R8A8);
-				// Fill in the source data from the file
-				FTexture2DMipMap& Mip = ModelTexture->PlatformData->Mips[0];
-				void* Data = Mip.BulkData.Lock(LOCK_READ_WRITE);
-				FMemory::Memcpy(Data, UncompressedBGRA->GetData(), UncompressedBGRA->Num());
-				Mip.BulkData.Unlock();
-				ModelTexture->UpdateResource();
-
-				UMaterialInstanceDynamic* RV_MatInst = UMaterialInstanceDynamic::Create(MasterMaterialRef, this);
-				RV_MatInst->SetTextureParameterValue(FName("T2DParam"), ModelTexture);
-			}
-		}
-	}
+	InverseNormals = false;
+	//swapCoords = 0;
 }
-
 
 // Called every frame
 void UAssimpImporterComponent::TickComponent(float DeltaTime, ELevelTick TickType, FActorComponentTickFunction* ThisTickFunction)
@@ -76,19 +55,24 @@ void UAssimpImporterComponent::TickComponent(float DeltaTime, ELevelTick TickTyp
 	// ...
 }
 
-bool UAssimpImporterComponent::Load(const FString& FilePath)
+bool UAssimpImporterComponent::Load3DModel(const FString& FilePath)
 {
-	
+	Vertices.Empty();
+	Normals.Empty();
+	Triangles.Empty();
+
 	Assimp::Importer importer;
-	const aiScene* scene = importer.ReadFile(TCHAR_TO_ANSI(*FilePath), aiProcessPreset_TargetRealtime_Quality);
-	/*aiProcess_GenNormals |
-	 |
-	aiProcess_CalcTangentSpace |
-	aiProcess_Triangulate |
-	aiProcess_JoinIdenticalVertices |
-	aiProcess_SortByPType);*/
+	const aiScene* scene = importer.ReadFile(TCHAR_TO_ANSI(*FilePath),
+		aiProcessPreset_TargetRealtime_Quality |
+		aiProcess_GenNormals |
+		aiProcess_CalcTangentSpace |
+		aiProcess_Triangulate |
+		aiProcess_JoinIdenticalVertices |
+		aiProcess_SortByPType |
+		aiProcess_FixInfacingNormals);
 
 	if (!scene) return false;
+	FILE* log = fopen("D:/tmp/log PF.txt", "w");
 
 	for (unsigned int i = 0; i < scene->mNumMeshes; i++)
 	{
@@ -101,7 +85,7 @@ bool UAssimpImporterComponent::Load(const FString& FilePath)
 			{
 				aiVector3D normal = currentMesh->mNormals[j].Normalize();
 				float tmp = 0;
-				switch (swapCoords)
+				/*switch (swapCoords)
 				{
 				case 1:
 					tmp = normal.z;
@@ -130,8 +114,8 @@ bool UAssimpImporterComponent::Load(const FString& FilePath)
 					normal.x = normal.z;
 					normal.z = tmp;
 					break;
-				}
-				int inverse = inverseNormals ? -1 : 1;
+				}*/
+				int inverse = InverseNormals ? -1 : 1;
 				Normals.Add(FVector(inverse*normal.x, inverse*normal.y, inverse*normal.z));
 			}
 		}
@@ -141,6 +125,13 @@ bool UAssimpImporterComponent::Load(const FString& FilePath)
 			for (unsigned int j = 0; j < currentMesh->mNumVertices; j++)
 			{
 				UVs.Add(FVector2D(currentMesh->mTextureCoords[0][j].x, 1 - currentMesh->mTextureCoords[0][j].y));
+				std::ostringstream stringStream;
+				stringStream << " Num vertice " << j << " : "
+					<< (unsigned int)(currentMesh->mTextureCoords[0][j].x) << " , "
+					<< (unsigned int)(1 - currentMesh->mTextureCoords[0][j].y) << std::endl;
+
+				std::string faceStr = stringStream.str();
+				fwrite(faceStr.c_str(), strlen(faceStr.c_str()), 1, log);
 			}
 		}
 
@@ -156,6 +147,42 @@ bool UAssimpImporterComponent::Load(const FString& FilePath)
 			}
 		}
 	}
+	fclose(log);
 
+	LoadTexture(FilePath);
 	return true;
+}
+
+void UAssimpImporterComponent::LoadTexture(const FString& FilePath)
+{
+	IImageWrapperModule& ImageWrapperModule = FModuleManager::LoadModuleChecked<IImageWrapperModule>(FName("ImageWrapper"));
+	// Note: PNG format.  Other formats are supported
+	IImageWrapperPtr ImageWrapper = ImageWrapperModule.CreateImageWrapper(EImageFormat::PNG);
+	TArray<uint8> RawFileData;
+	FString TexturePath = FPaths::GetPath(FilePath) / FPaths::GetBaseFilename(FilePath) + FString(".png");
+	std::string strname(TCHAR_TO_ANSI(*TexturePath));
+	if (FFileHelper::LoadFileToArray(RawFileData, *TexturePath))
+	{
+		if (ImageWrapper.IsValid() && ImageWrapper->SetCompressed(RawFileData.GetData(), RawFileData.Num()))
+		{
+			const TArray<uint8>* UncompressedBGRA = NULL;
+			if (ImageWrapper->GetRaw(ERGBFormat::BGRA, 8, UncompressedBGRA))
+			{
+				ModelTexture = UTexture2D::CreateTransient(ImageWrapper->GetWidth(), ImageWrapper->GetHeight(), PF_B8G8R8A8);
+				// Fill in the source data from the file
+				FTexture2DMipMap& Mip = ModelTexture->PlatformData->Mips[0];
+				void* Data = Mip.BulkData.Lock(LOCK_READ_WRITE);
+				FMemory::Memcpy(Data, UncompressedBGRA->GetData(), UncompressedBGRA->Num());
+				Mip.BulkData.Unlock();
+				ModelTexture->UpdateResource();
+			}
+		}
+	}
+}
+
+void UAssimpImporterComponent::SetMaterialToProceduralMeshComp(UProceduralMeshComponent* procMeshComp)
+{
+	UMaterialInstanceDynamic* dynamicMatInstance = UMaterialInstanceDynamic::Create(InterfaceToMainMaterial, this);
+	procMeshComp->SetMaterial(0, dynamicMatInstance);
+	dynamicMatInstance->SetTextureParameterValue(FName("T2DParam"), ModelTexture);
 }
