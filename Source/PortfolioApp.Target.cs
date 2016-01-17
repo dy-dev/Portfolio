@@ -3,9 +3,9 @@
 using UnrealBuildTool;
 using System.Collections.Generic;
 
-public class PortFolioAppTarget : TargetRules
+public class PortfolioAppTarget : TargetRules
 {
-	public PortFolioAppTarget(TargetInfo Target)
+	public PortfolioAppTarget(TargetInfo Target)
 	{
 		Type = TargetType.Game;
 	}
@@ -20,6 +20,6 @@ public class PortFolioAppTarget : TargetRules
 		ref List<string> OutExtraModuleNames
 		)
 	{
-		OutExtraModuleNames.AddRange( new string[] { "PortFolioApp" } );
+		OutExtraModuleNames.AddRange( new string[] { "PortfolioApp" } );
 	}
 }

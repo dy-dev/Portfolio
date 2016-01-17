@@ -415,9 +415,6 @@
     <ClInclude Include="..\..\Source\PortfolioApp\Public\DiapoAssetsContainer.h">
       <Filter>Source\PortfolioApp\Public\Diaporama</Filter>
     </ClInclude>
-    <ClInclude Include="..\..\Source\PortfolioApp\Public\DiapoPlayerController.h">
-      <Filter>Source\PortfolioApp\Public\Diaporama</Filter>
-    </ClInclude>
     <ClInclude Include="..\..\Source\PortfolioApp\Public\DirectoryVisitor.h">
       <Filter>Source\PortfolioApp\Public\FileManagement</Filter>
     </ClInclude>
@@ -449,6 +446,9 @@
       <Filter>Source\PortfolioApp\Public\AppliRelated</Filter>
     </ClInclude>
     <ClInclude Include="..\..\Source\PortfolioApp\Public\PortfolioPlayerState.h">
+      <Filter>Source\PortfolioApp\Public\AppliRelated</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Source\PortfolioApp\Public\DiapoPlayerController.h">
       <Filter>Source\PortfolioApp\Public\AppliRelated</Filter>
     </ClInclude>
   </ItemGroup>
