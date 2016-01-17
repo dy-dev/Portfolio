@@ -1,0 +1,677 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="14.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <None Include="..\..\PortfolioApp.uproject" />
+    <Filter Include="Source">
+      <UniqueIdentifier>{D213A0D0-5405-4775-BB8B-8F20C9CC6271}</UniqueIdentifier>
+    </Filter>
+    <None Include="..\..\Source\PortfolioApp.Target.cs">
+      <Filter>Source</Filter>
+    </None>
+    <None Include="..\..\Source\PortfolioAppEditor.Target.cs">
+      <Filter>Source</Filter>
+    </None>
+    <Filter Include="Config">
+      <UniqueIdentifier>{65C0C7E4-E760-4AB4-B204-4760FA851FAF}</UniqueIdentifier>
+    </Filter>
+    <None Include="..\..\Config\DefaultEditor.ini">
+      <Filter>Config</Filter>
+    </None>
+    <None Include="..\..\Config\DefaultEngine.ini">
+      <Filter>Config</Filter>
+    </None>
+    <None Include="..\..\Config\DefaultGame.ini">
+      <Filter>Config</Filter>
+    </None>
+    <None Include="..\..\Config\DefaultInput.ini">
+      <Filter>Config</Filter>
+    </None>
+    <Filter Include="Source\PortfolioApp">
+      <UniqueIdentifier>{96C382C3-6C4F-48FB-8696-978B465871EE}</UniqueIdentifier>
+    </Filter>
+    <None Include="..\..\Source\PortfolioApp\PortfolioApp.Build.cs">
+      <Filter>Source\PortfolioApp</Filter>
+    </None>
+    <ClCompile Include="..\..\Source\PortfolioApp\PortfolioApp.cpp">
+      <Filter>Source\PortfolioApp</Filter>
+    </ClCompile>
+    <ClInclude Include="..\..\Source\PortfolioApp\PortfolioApp.h">
+      <Filter>Source\PortfolioApp</Filter>
+    </ClInclude>
+    <Filter Include="Source\PortfolioApp\Private">
+      <UniqueIdentifier>{20B360FC-EA06-4287-BF3B-648EDECE4C43}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source\PortfolioApp\Public">
+      <UniqueIdentifier>{65628A59-70EB-4D18-AFF3-5F73EE49BDC5}</UniqueIdentifier>
+    </Filter>
+    <None Include="..\..\Source\PortfolioApp\assimp\color4.inl">
+      <Filter>Assimp\Header</Filter>
+    </None>
+    <None Include="..\..\Source\PortfolioApp\assimp\material.inl">
+      <Filter>Assimp\Header</Filter>
+    </None>
+    <None Include="..\..\Source\PortfolioApp\assimp\matrix3x3.inl">
+      <Filter>Assimp\Header</Filter>
+    </None>
+    <None Include="..\..\Source\PortfolioApp\assimp\matrix4x4.inl">
+      <Filter>Assimp\Header</Filter>
+    </None>
+    <None Include="..\..\Source\PortfolioApp\assimp\quaternion.inl">
+      <Filter>Assimp\Header</Filter>
+    </None>
+    <None Include="..\..\Source\PortfolioApp\assimp\vector2.inl">
+      <Filter>Assimp\Header</Filter>
+    </None>
+    <None Include="..\..\Source\PortfolioApp\assimp\vector3.inl">
+      <Filter>Assimp\Header</Filter>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="..\..\Source\PortfolioApp\assimp\DefaultLogger.hpp">
+      <Filter>Assimp\Header</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Source\PortfolioApp\assimp\Exporter.hpp">
+      <Filter>Assimp\Header</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Source\PortfolioApp\assimp\Importer.hpp">
+      <Filter>Assimp\Header</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Source\PortfolioApp\assimp\IOStream.hpp">
+      <Filter>Assimp\Header</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Source\PortfolioApp\assimp\IOSystem.hpp">
+      <Filter>Assimp\Header</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Source\PortfolioApp\assimp\Logger.hpp">
+      <Filter>Assimp\Header</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Source\PortfolioApp\assimp\LogStream.hpp">
+      <Filter>Assimp\Header</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Source\PortfolioApp\assimp\NullLogger.hpp">
+      <Filter>Assimp\Header</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Source\PortfolioApp\assimp\ProgressHandler.hpp">
+      <Filter>Assimp\Header</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Source\PortfolioApp\assimp\ai_assert.h">
+      <Filter>Assimp\Header</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Source\PortfolioApp\assimp\anim.h">
+      <Filter>Assimp\Header</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Source\PortfolioApp\assimp\AssimpPCH.h">
+      <Filter>Assimp\Header</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Source\PortfolioApp\assimp\BaseImporter.h">
+      <Filter>Assimp\Header</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Source\PortfolioApp\assimp\BaseProcess.h">
+      <Filter>Assimp\Header</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Source\PortfolioApp\assimp\ByteSwap.h">
+      <Filter>Assimp\Header</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Source\PortfolioApp\assimp\CalcTangentsProcess.h">
+      <Filter>Assimp\Header</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Source\PortfolioApp\assimp\camera.h">
+      <Filter>Assimp\Header</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Source\PortfolioApp\assimp\cexport.h">
+      <Filter>Assimp\Header</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Source\PortfolioApp\assimp\cfileio.h">
+      <Filter>Assimp\Header</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Source\PortfolioApp\assimp\cimport.h">
+      <Filter>Assimp\Header</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Source\PortfolioApp\assimp\color4.h">
+      <Filter>Assimp\Header</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Source\PortfolioApp\assimp\ComputeUVMappingProcess.h">
+      <Filter>Assimp\Header</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Source\PortfolioApp\assimp\config.h">
+      <Filter>Assimp\Header</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Source\PortfolioApp\assimp\ConvertToLHProcess.h">
+      <Filter>Assimp\Header</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Source\PortfolioApp\assimp\ConvertUTF.h">
+      <Filter>Assimp\Header</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Source\PortfolioApp\assimp\DeboneProcess.h">
+      <Filter>Assimp\Header</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Source\PortfolioApp\assimp\DefaultIOStream.h">
+      <Filter>Assimp\Header</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Source\PortfolioApp\assimp\DefaultIOSystem.h">
+      <Filter>Assimp\Header</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Source\PortfolioApp\assimp\DefaultProgressHandler.h">
+      <Filter>Assimp\Header</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Source\PortfolioApp\assimp\defs.h">
+      <Filter>Assimp\Header</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Source\PortfolioApp\assimp\Exceptional.h">
+      <Filter>Assimp\Header</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Source\PortfolioApp\assimp\fast_atof.h">
+      <Filter>Assimp\Header</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Source\PortfolioApp\assimp\FileLogStream.h">
+      <Filter>Assimp\Header</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Source\PortfolioApp\assimp\FileSystemFilter.h">
+      <Filter>Assimp\Header</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Source\PortfolioApp\assimp\FindDegenerates.h">
+      <Filter>Assimp\Header</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Source\PortfolioApp\assimp\FindInstancesProcess.h">
+      <Filter>Assimp\Header</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Source\PortfolioApp\assimp\FindInvalidDataProcess.h">
+      <Filter>Assimp\Header</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Source\PortfolioApp\assimp\FixNormalsStep.h">
+      <Filter>Assimp\Header</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Source\PortfolioApp\assimp\GenericProperty.h">
+      <Filter>Assimp\Header</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Source\PortfolioApp\assimp\GenFaceNormalsProcess.h">
+      <Filter>Assimp\Header</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Source\PortfolioApp\assimp\GenVertexNormalsProcess.h">
+      <Filter>Assimp\Header</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Source\PortfolioApp\assimp\Hash.h">
+      <Filter>Assimp\Header</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Source\PortfolioApp\assimp\Importer.h">
+      <Filter>Assimp\Header</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Source\PortfolioApp\assimp\importerdesc.h">
+      <Filter>Assimp\Header</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Source\PortfolioApp\assimp\ImproveCacheLocality.h">
+      <Filter>Assimp\Header</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Source\PortfolioApp\assimp\JoinVerticesProcess.h">
+      <Filter>Assimp\Header</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Source\PortfolioApp\assimp\light.h">
+      <Filter>Assimp\Header</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Source\PortfolioApp\assimp\LimitBoneWeightsProcess.h">
+      <Filter>Assimp\Header</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Source\PortfolioApp\assimp\material.h">
+      <Filter>Assimp\Header</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Source\PortfolioApp\assimp\MaterialSystem.h">
+      <Filter>Assimp\Header</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Source\PortfolioApp\assimp\matrix3x3.h">
+      <Filter>Assimp\Header</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Source\PortfolioApp\assimp\matrix4x4.h">
+      <Filter>Assimp\Header</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Source\PortfolioApp\assimp\MemoryIOWrapper.h">
+      <Filter>Assimp\Header</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Source\PortfolioApp\assimp\mesh.h">
+      <Filter>Assimp\Header</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Source\PortfolioApp\assimp\metadata.h">
+      <Filter>Assimp\Header</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Source\PortfolioApp\assimp\ObjExporter.h">
+      <Filter>Assimp\Header</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Source\PortfolioApp\assimp\ObjFileData.h">
+      <Filter>Assimp\Header</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Source\PortfolioApp\assimp\ObjFileImporter.h">
+      <Filter>Assimp\Header</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Source\PortfolioApp\assimp\ObjFileMtlImporter.h">
+      <Filter>Assimp\Header</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Source\PortfolioApp\assimp\ObjFileParser.h">
+      <Filter>Assimp\Header</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Source\PortfolioApp\assimp\ObjTools.h">
+      <Filter>Assimp\Header</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Source\PortfolioApp\assimp\OptimizeGraph.h">
+      <Filter>Assimp\Header</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Source\PortfolioApp\assimp\OptimizeMeshes.h">
+      <Filter>Assimp\Header</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Source\PortfolioApp\assimp\ParsingUtils.h">
+      <Filter>Assimp\Header</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Source\PortfolioApp\assimp\PolyTools.h">
+      <Filter>Assimp\Header</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Source\PortfolioApp\assimp\postprocess.h">
+      <Filter>Assimp\Header</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Source\PortfolioApp\assimp\PretransformVertices.h">
+      <Filter>Assimp\Header</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Source\PortfolioApp\assimp\ProcessHelper.h">
+      <Filter>Assimp\Header</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Source\PortfolioApp\assimp\Profiler.h">
+      <Filter>Assimp\Header</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Source\PortfolioApp\assimp\qnan.h">
+      <Filter>Assimp\Header</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Source\PortfolioApp\assimp\quaternion.h">
+      <Filter>Assimp\Header</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Source\PortfolioApp\assimp\RemoveRedundantMaterials.h">
+      <Filter>Assimp\Header</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Source\PortfolioApp\assimp\RemoveVCProcess.h">
+      <Filter>Assimp\Header</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Source\PortfolioApp\assimp\scene.h">
+      <Filter>Assimp\Header</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Source\PortfolioApp\assimp\SceneCombiner.h">
+      <Filter>Assimp\Header</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Source\PortfolioApp\assimp\ScenePreprocessor.h">
+      <Filter>Assimp\Header</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Source\PortfolioApp\assimp\ScenePrivate.h">
+      <Filter>Assimp\Header</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Source\PortfolioApp\assimp\SortByPTypeProcess.h">
+      <Filter>Assimp\Header</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Source\PortfolioApp\assimp\SpatialSort.h">
+      <Filter>Assimp\Header</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Source\PortfolioApp\assimp\SplitByBoneCountProcess.h">
+      <Filter>Assimp\Header</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Source\PortfolioApp\assimp\SplitLargeMeshes.h">
+      <Filter>Assimp\Header</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Source\PortfolioApp\assimp\StdOStreamLogStream.h">
+      <Filter>Assimp\Header</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Source\PortfolioApp\assimp\StreamReader.h">
+      <Filter>Assimp\Header</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Source\PortfolioApp\assimp\StringComparison.h">
+      <Filter>Assimp\Header</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Source\PortfolioApp\assimp\texture.h">
+      <Filter>Assimp\Header</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Source\PortfolioApp\assimp\TextureTransform.h">
+      <Filter>Assimp\Header</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Source\PortfolioApp\assimp\TinyFormatter.h">
+      <Filter>Assimp\Header</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Source\PortfolioApp\assimp\TriangulateProcess.h">
+      <Filter>Assimp\Header</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Source\PortfolioApp\assimp\types.h">
+      <Filter>Assimp\Header</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Source\PortfolioApp\assimp\ValidateDataStructure.h">
+      <Filter>Assimp\Header</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Source\PortfolioApp\assimp\vector2.h">
+      <Filter>Assimp\Header</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Source\PortfolioApp\assimp\vector3.h">
+      <Filter>Assimp\Header</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Source\PortfolioApp\assimp\version.h">
+      <Filter>Assimp\Header</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Source\PortfolioApp\assimp\Vertex.h">
+      <Filter>Assimp\Header</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Source\PortfolioApp\assimp\VertexTriangleAdjacency.h">
+      <Filter>Assimp\Header</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Source\PortfolioApp\assimp\Win32DebugLogStream.h">
+      <Filter>Assimp\Header</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Source\PortfolioApp\assimp\Compiler\poppack1.h">
+      <Filter>Assimp\Compiler</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Source\PortfolioApp\assimp\Compiler\pstdint.h">
+      <Filter>Assimp\Compiler</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Source\PortfolioApp\assimp\Compiler\pushpack1.h">
+      <Filter>Assimp\Compiler</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Source\PortfolioApp\assimp\BoostWorkaround\boost\math\common_factor_rt.hpp">
+      <Filter>Assimp\boost</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Source\PortfolioApp\assimp\BoostWorkaround\boost\tuple\tuple.hpp">
+      <Filter>Assimp\boost</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Source\PortfolioApp\assimp\BoostWorkaround\boost\foreach.hpp">
+      <Filter>Assimp\boost</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Source\PortfolioApp\assimp\BoostWorkaround\boost\format.hpp">
+      <Filter>Assimp\boost</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Source\PortfolioApp\assimp\BoostWorkaround\boost\lexical_cast.hpp">
+      <Filter>Assimp\boost</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Source\PortfolioApp\assimp\BoostWorkaround\boost\make_shared.hpp">
+      <Filter>Assimp\boost</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Source\PortfolioApp\assimp\BoostWorkaround\boost\noncopyable.hpp">
+      <Filter>Assimp\boost</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Source\PortfolioApp\assimp\BoostWorkaround\boost\pointer_cast.hpp">
+      <Filter>Assimp\boost</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Source\PortfolioApp\assimp\BoostWorkaround\boost\scoped_array.hpp">
+      <Filter>Assimp\boost</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Source\PortfolioApp\assimp\BoostWorkaround\boost\scoped_ptr.hpp">
+      <Filter>Assimp\boost</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Source\PortfolioApp\assimp\BoostWorkaround\boost\shared_array.hpp">
+      <Filter>Assimp\boost</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Source\PortfolioApp\assimp\BoostWorkaround\boost\shared_ptr.hpp">
+      <Filter>Assimp\boost</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Source\PortfolioApp\assimp\BoostWorkaround\boost\static_assert.hpp">
+      <Filter>Assimp\boost</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Source\PortfolioApp\assimp\BoostWorkaround\boost\timer.hpp">
+      <Filter>Assimp\boost</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Source\PortfolioApp\Public\AssimpImporterComponent.h">
+      <Filter>Source\PortfolioApp\Public\3D</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Source\PortfolioApp\Public\DDFileTreeItem.h">
+      <Filter>Source\PortfolioApp\Public\FileManagement</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Source\PortfolioApp\Public\DiapoAssetsContainer.h">
+      <Filter>Source\PortfolioApp\Public\Diaporama</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Source\PortfolioApp\Public\DiapoPlayerController.h">
+      <Filter>Source\PortfolioApp\Public\Diaporama</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Source\PortfolioApp\Public\DirectoryVisitor.h">
+      <Filter>Source\PortfolioApp\Public\FileManagement</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Source\PortfolioApp\Public\ImageLoader.h">
+      <Filter>Source\PortfolioApp\Public\Diaporama</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Source\PortfolioApp\Public\ImagesHolder.h">
+      <Filter>Source\PortfolioApp\Public\Diaporama</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Source\PortfolioApp\Public\SDDFileTree.h">
+      <Filter>Source\PortfolioApp\Public\FileManagement</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Source\PortfolioApp\Public\SDDFileTreeWidget.h">
+      <Filter>Source\PortfolioApp\Public\FileManagement</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Source\PortfolioApp\Public\STreeViewWidget.h">
+      <Filter>Source\PortfolioApp\Public\FileManagement</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Source\PortfolioApp\Public\PortfolioPlayerController.h">
+      <Filter>Source\PortfolioApp\Public\AppliRelated</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Source\PortfolioApp\Public\SlateGameMode.h">
+      <Filter>Source\PortfolioApp\Public\AppliRelated</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Source\PortfolioApp\Public\SlateHUD.h">
+      <Filter>Source\PortfolioApp\Public\AppliRelated</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Source\PortfolioApp\Public\DiaporamaState.h">
+      <Filter>Source\PortfolioApp\Public\AppliRelated</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Source\PortfolioApp\Public\PortfolioPlayerState.h">
+      <Filter>Source\PortfolioApp\Public\AppliRelated</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="..\..\Source\PortfolioApp\assimp\SpatialSort.cpp">
+      <Filter>Assimp\Source</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Source\PortfolioApp\assimp\SplitByBoneCountProcess.cpp">
+      <Filter>Assimp\Source</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Source\PortfolioApp\assimp\SplitLargeMeshes.cpp">
+      <Filter>Assimp\Source</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Source\PortfolioApp\assimp\TextureTransform.cpp">
+      <Filter>Assimp\Source</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Source\PortfolioApp\assimp\TriangulateProcess.cpp">
+      <Filter>Assimp\Source</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Source\PortfolioApp\assimp\ValidateDataStructure.cpp">
+      <Filter>Assimp\Source</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Source\PortfolioApp\assimp\VertexTriangleAdjacency.cpp">
+      <Filter>Assimp\Source</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Source\PortfolioApp\assimp\AssimpPCH.cpp">
+      <Filter>Assimp\Source</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Source\PortfolioApp\assimp\BaseImporter.cpp">
+      <Filter>Assimp\Source</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Source\PortfolioApp\assimp\BaseProcess.cpp">
+      <Filter>Assimp\Source</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Source\PortfolioApp\assimp\CalcTangentsProcess.cpp">
+      <Filter>Assimp\Source</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Source\PortfolioApp\assimp\ComputeUVMappingProcess.cpp">
+      <Filter>Assimp\Source</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Source\PortfolioApp\assimp\ConvertToLHProcess.cpp">
+      <Filter>Assimp\Source</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Source\PortfolioApp\assimp\DeboneProcess.cpp">
+      <Filter>Assimp\Source</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Source\PortfolioApp\assimp\DefaultIOStream.cpp">
+      <Filter>Assimp\Source</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Source\PortfolioApp\assimp\DefaultIOSystem.cpp">
+      <Filter>Assimp\Source</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Source\PortfolioApp\assimp\DefaultLogger.cpp">
+      <Filter>Assimp\Source</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Source\PortfolioApp\assimp\FindDegenerates.cpp">
+      <Filter>Assimp\Source</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Source\PortfolioApp\assimp\FindInstancesProcess.cpp">
+      <Filter>Assimp\Source</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Source\PortfolioApp\assimp\FindInvalidDataProcess.cpp">
+      <Filter>Assimp\Source</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Source\PortfolioApp\assimp\FixNormalsStep.cpp">
+      <Filter>Assimp\Source</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Source\PortfolioApp\assimp\GenFaceNormalsProcess.cpp">
+      <Filter>Assimp\Source</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Source\PortfolioApp\assimp\GenVertexNormalsProcess.cpp">
+      <Filter>Assimp\Source</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Source\PortfolioApp\assimp\Importer.cpp">
+      <Filter>Assimp\Source</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Source\PortfolioApp\assimp\ImporterRegistry.cpp">
+      <Filter>Assimp\Source</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Source\PortfolioApp\assimp\ImproveCacheLocality.cpp">
+      <Filter>Assimp\Source</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Source\PortfolioApp\assimp\JoinVerticesProcess.cpp">
+      <Filter>Assimp\Source</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Source\PortfolioApp\assimp\LimitBoneWeightsProcess.cpp">
+      <Filter>Assimp\Source</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Source\PortfolioApp\assimp\MaterialSystem.cpp">
+      <Filter>Assimp\Source</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Source\PortfolioApp\assimp\ObjExporter.cpp">
+      <Filter>Assimp\Source</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Source\PortfolioApp\assimp\ObjFileImporter.cpp">
+      <Filter>Assimp\Source</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Source\PortfolioApp\assimp\ObjFileMtlImporter.cpp">
+      <Filter>Assimp\Source</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Source\PortfolioApp\assimp\ObjFileParser.cpp">
+      <Filter>Assimp\Source</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Source\PortfolioApp\assimp\OptimizeGraph.cpp">
+      <Filter>Assimp\Source</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Source\PortfolioApp\assimp\OptimizeMeshes.cpp">
+      <Filter>Assimp\Source</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Source\PortfolioApp\assimp\PostStepRegistry.cpp">
+      <Filter>Assimp\Source</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Source\PortfolioApp\assimp\PretransformVertices.cpp">
+      <Filter>Assimp\Source</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Source\PortfolioApp\assimp\ProcessHelper.cpp">
+      <Filter>Assimp\Source</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Source\PortfolioApp\assimp\RemoveRedundantMaterials.cpp">
+      <Filter>Assimp\Source</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Source\PortfolioApp\assimp\RemoveVCProcess.cpp">
+      <Filter>Assimp\Source</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Source\PortfolioApp\assimp\SceneCombiner.cpp">
+      <Filter>Assimp\Source</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Source\PortfolioApp\assimp\ScenePreprocessor.cpp">
+      <Filter>Assimp\Source</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Source\PortfolioApp\assimp\SortByPTypeProcess.cpp">
+      <Filter>Assimp\Source</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Source\PortfolioApp\Private\AssimpImporterComponent.cpp">
+      <Filter>Source\PortfolioApp\Private\3D</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Source\PortfolioApp\Private\SDDFileTree.cpp">
+      <Filter>Source\PortfolioApp\Private\FileManagement</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Source\PortfolioApp\Private\SDDFileTreeWidget.cpp">
+      <Filter>Source\PortfolioApp\Private\FileManagement</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Source\PortfolioApp\Private\STreeViewWidget.cpp">
+      <Filter>Source\PortfolioApp\Private\FileManagement</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Source\PortfolioApp\Private\DiapoAssetsContainer.cpp">
+      <Filter>Source\PortfolioApp\Private\Diaporama</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Source\PortfolioApp\Private\ImageLoader.cpp">
+      <Filter>Source\PortfolioApp\Private\Diaporama</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Source\PortfolioApp\Private\ImagesHolder.cpp">
+      <Filter>Source\PortfolioApp\Private\Diaporama</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Source\PortfolioApp\Private\SlateGameMode.cpp">
+      <Filter>Source\PortfolioApp\Private\AppliRelated</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Source\PortfolioApp\Private\SlateHUD.cpp">
+      <Filter>Source\PortfolioApp\Private\AppliRelated</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Source\PortfolioApp\Private\PortfolioPlayerController.cpp">
+      <Filter>Source\PortfolioApp\Private\AppliRelated</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Source\PortfolioApp\Private\DiapoPlayerController.cpp">
+      <Filter>Source\PortfolioApp\Private\AppliRelated</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Source\PortfolioApp\Private\DiaporamaState.cpp">
+      <Filter>Source\PortfolioApp\Private\AppliRelated</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Source\PortfolioApp\Private\PortfolioPlayerState.cpp">
+      <Filter>Source\PortfolioApp\Private\AppliRelated</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <Filter Include="Assimp">
+      <UniqueIdentifier>{88c4cedd-4c79-46b8-87eb-49e84d3fd63e}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Assimp\boost">
+      <UniqueIdentifier>{1e26422f-081b-494c-abcf-9f4213b10886}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Assimp\Header">
+      <UniqueIdentifier>{73bd1791-99eb-4c0a-a354-6ea770f9364d}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Assimp\Source">
+      <UniqueIdentifier>{6a735194-3836-4494-976e-363b3f6fc270}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Assimp\Compiler">
+      <UniqueIdentifier>{05e716e7-2122-4397-98e8-6d1537b54e82}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source\PortfolioApp\Private\Diaporama">
+      <UniqueIdentifier>{da45bcca-56ac-422a-9b2e-4ae810b58a37}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source\PortfolioApp\Public\Diaporama">
+      <UniqueIdentifier>{d537be33-d6d5-4632-96a6-cdc6f9ceddeb}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source\PortfolioApp\Private\3D">
+      <UniqueIdentifier>{891b59d4-1c45-4b94-bbc0-2742c1c9fd77}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source\PortfolioApp\Public\3D">
+      <UniqueIdentifier>{6707b718-019a-49db-a350-846665a08558}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source\PortfolioApp\Private\Anim">
+      <UniqueIdentifier>{607a1c9f-925d-4864-ada5-dbe599406556}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source\PortfolioApp\Public\Anim">
+      <UniqueIdentifier>{01c6c4c1-84c8-4c54-8a74-18a56372102d}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source\PortfolioApp\Private\FileManagement">
+      <UniqueIdentifier>{62987346-2e1d-4118-a4f4-acffcdc15286}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source\PortfolioApp\Public\FileManagement">
+      <UniqueIdentifier>{64b38e19-ce3c-4565-a735-45404ce1aec0}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source\PortfolioApp\Private\AppliRelated">
+      <UniqueIdentifier>{220fc32b-9bce-49ce-8e9c-cff3e7d42fb4}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source\PortfolioApp\Public\AppliRelated">
+      <UniqueIdentifier>{7f2963d7-03f3-4352-a18f-88a2a28c94bb}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <Text Include="..\..\Source\PortfolioApp\assimp\BoostWorkaround\boost\LICENSE_1_0.txt">
+      <Filter>Assimp\boost</Filter>
+    </Text>
+  </ItemGroup>
+</Project>

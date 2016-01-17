@@ -9,7 +9,7 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Games", "Games", "{D6F158A5
 EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "UE4", "Intermediate\ProjectFiles\UE4.vcxproj", "{1357BA45-BF3B-48DF-B37E-CAF8B1DE5E1A}"
 EndProject
-Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "PortFolioApp", "Intermediate\ProjectFiles\PortFolioApp.vcxproj", "{473B84ED-2EB2-482D-BB3C-C8F3D70154F7}"
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "PortfolioApp", "Intermediate\ProjectFiles\PortfolioApp.vcxproj", "{473B84ED-2EB2-482D-BB3C-C8F3D70154F7}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
