@@ -10,10 +10,10 @@ ADiapoPlayerController::ADiapoPlayerController(const class FObjectInitializer& O
 	: Super(ObjectInitializer)
 {
 	ADiaporamaState* DiaporamaState = Cast<ADiaporamaState>(this->PlayerState);
-	if (DiaporamaState != 0x0 && DiaporamaState->Images.Num() > 0)
+	/*if (DiaporamaState != 0x0 && DiaporamaState->Images.Num() > 0)
 	{
 		UTexture2D* tex = DiaporamaState->Images[0];
 		FString texName = tex->GetName();
 		std::string strfileName(TCHAR_TO_ANSI(*texName));
-	}
+	}*/
 }

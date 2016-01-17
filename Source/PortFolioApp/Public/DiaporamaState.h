@@ -6,18 +6,6 @@
 #include "DiaporamaState.generated.h"
 
 
-/**
-*  @class ADiaporamaState
-*
-* 	@brief Class representing
-*/
-UENUM(BlueprintType)		//"BlueprintType" is essential to include
-enum class EActiveWidget : uint8
-{
-	VE_Menus 	UMETA(DisplayName = "Menu"),
-	VE_Tour 	UMETA(DisplayName = "Tour"),
-	VE_Gallery 	UMETA(DisplayName = "Gallery")
-};
 
 /**
  *
@@ -34,16 +22,6 @@ public:
 	* @param	ObjectInitializer	The object initializer.
 	*/
 	ADiaporamaState(const class FObjectInitializer& ObjectInitializer);
-
-
-	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Diaporama")
-		TArray<UTexture2D*> Images;
-
-	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Diaporama")
-		FString ImagesPaths;
-
-	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Diaporama")
-		EActiveWidget CurrentActiveWidget;
 
 
 private:

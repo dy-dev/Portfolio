@@ -4,13 +4,14 @@
 #include "SlateHud.h"
 #include "SlateGameMode.h"
 #include "DiapoPlayerController.h"
+#include "PortFolioPlayerController.h"
 #include "DiaporamaState.h"
 
 ASlateGameMode::ASlateGameMode() : Super()
 {
 	//Set the hud class to use our custom HUD by default.
 	this->HUDClass = ASlateHUD::StaticClass();
-	this->PlayerControllerClass = ADiapoPlayerController::StaticClass();
+	this->PlayerControllerClass = APortFolioPlayerController::StaticClass();
 	this->PlayerStateClass = ADiaporamaState::StaticClass();
 }
 
