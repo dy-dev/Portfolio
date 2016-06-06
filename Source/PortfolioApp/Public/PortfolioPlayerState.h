@@ -13,10 +13,10 @@
 UENUM( BlueprintType )		//"BlueprintType" is essential to include
 enum class EActiveWidget : uint8
 {
-    VE_Menus 	UMETA( DisplayName = "Menu" ),
-    VE_Diapo 	UMETA( DisplayName = "Diapo" ),
-    VE_3D 	    UMETA( DisplayName = "3D" ),
-    VE_Anim 	UMETA( DisplayName = "Anim" )
+    VE_Menus 	    UMETA( DisplayName = "Menu" ),
+    VE_Diapo 	    UMETA( DisplayName = "Diapo" ),
+    VE_Categories 	UMETA( DisplayName = "Categories" ),
+    VE_Flyer 	    UMETA( DisplayName = "Flyer" )
 };
 
 /**

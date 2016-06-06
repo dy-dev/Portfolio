@@ -22,25 +22,25 @@ static const char* LEGAL_INFORMATION =
 
 // ------------------------------------------------------------------------------------------------
 // Get legal string
-TEST_API const char*  aiGetLegalString  ()	{
+PORTFOLIOAPP_API const char*  aiGetLegalString  ()	{
 	return LEGAL_INFORMATION;
 }
 
 // ------------------------------------------------------------------------------------------------
 // Get Assimp minor version
-TEST_API unsigned int aiGetVersionMinor ()	{
+PORTFOLIOAPP_API unsigned int aiGetVersionMinor ()	{
     return MinorVersion;
 }
 
 // ------------------------------------------------------------------------------------------------
 // Get Assimp major version
-TEST_API unsigned int aiGetVersionMajor ()	{
+PORTFOLIOAPP_API unsigned int aiGetVersionMajor ()	{
     return MajorVersion;
 }
 
 // ------------------------------------------------------------------------------------------------
 // Get flags used for compilation
-TEST_API unsigned int aiGetCompileFlags ()	{
+PORTFOLIOAPP_API unsigned int aiGetCompileFlags ()	{
 
 	unsigned int flags = 0;
 
@@ -67,13 +67,13 @@ TEST_API unsigned int aiGetCompileFlags ()	{
 #include "revision.h"
 
 // ------------------------------------------------------------------------------------------------
-TEST_API unsigned int aiGetVersionRevision ()
+PORTFOLIOAPP_API unsigned int aiGetVersionRevision ()
 {
     return GitVersion;
 }
 
 // ------------------------------------------------------------------------------------------------
-TEST_API aiScene::aiScene()
+PORTFOLIOAPP_API aiScene::aiScene()
 	: mFlags(0)
 	, mRootNode(NULL)
 	, mNumMeshes(0)
@@ -93,7 +93,7 @@ TEST_API aiScene::aiScene()
 	}
 
 // ------------------------------------------------------------------------------------------------
-TEST_API aiScene::~aiScene()
+PORTFOLIOAPP_API aiScene::~aiScene()
 {
 	// delete all sub-objects recursively
 	delete mRootNode;

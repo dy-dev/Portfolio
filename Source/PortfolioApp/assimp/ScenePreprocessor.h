@@ -54,7 +54,7 @@ namespace Assimp	{
  *  importer, such as aiMesh::mPrimitiveTypes.
 */
 // ----------------------------------------------------------------------------------
-class TEST_API ScenePreprocessor
+class PORTFOLIOAPP_API ScenePreprocessor
 {
 	// Make ourselves a friend of the corresponding test unit.
 	friend class ::ScenePreprocessorTest;

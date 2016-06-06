@@ -61,7 +61,7 @@ namespace Assimp	{
  *  to the Importer. If you implement this interface, be sure to also provide an
  *  implementation for IOSystem that creates instances of your custom IO class.
 */
-class TEST_API IOStream
+class PORTFOLIOAPP_API IOStream
 #ifndef SWIG
 	: public Intern::AllocateFromAssimpHeap
 #endif

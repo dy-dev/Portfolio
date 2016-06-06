@@ -86,7 +86,7 @@ namespace Intern		{
 	 */
 	// --------------------------------------------------------------------
 #ifndef SWIG
-	struct TEST_API AllocateFromAssimpHeap	{
+	struct PORTFOLIOAPP_API AllocateFromAssimpHeap	{
 		// http://www.gotw.ca/publications/mill15.htm
 
 		// new/delete overload

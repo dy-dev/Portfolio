@@ -56,7 +56,7 @@ namespace Assimp	{
  *
  *  Originally this was a workaround for some models written by Blender
  *  which have zero normal vectors. */
-class TEST_API FindInvalidDataProcess : public BaseProcess
+class PORTFOLIOAPP_API FindInvalidDataProcess : public BaseProcess
 {
 public:
 

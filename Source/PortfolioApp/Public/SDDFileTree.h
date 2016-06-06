@@ -95,8 +95,6 @@ private:
 	TArray< FDDFileTreeItemPtr > Directories;
 	TMap< FString, FDDFileTreeItemPtr > PathsToDirectories;
 
-	
-
 	////////////////////////////////////////////////////////////////////////////////////////////////////
 	/////Pointer to our parent HUD
 	/////To make sure HUD's lifetime is controlled elsewhere, use "weak" ptr.

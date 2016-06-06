@@ -113,7 +113,7 @@ namespace Assimp	{
 * @note One Importer instance is not thread-safe. If you use multiple
 * threads for loading, each thread should maintain its own Importer instance.
 */
-class TEST_API Importer	{
+class PORTFOLIOAPP_API Importer	{
 
 public:
 

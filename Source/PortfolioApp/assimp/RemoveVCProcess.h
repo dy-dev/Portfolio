@@ -53,7 +53,7 @@ namespace Assimp {
 /** RemoveVCProcess: Class to exclude specific parts of the data structure
  *  from further processing by removing them,
 */
-class TEST_API RemoveVCProcess : public BaseProcess
+class PORTFOLIOAPP_API RemoveVCProcess : public BaseProcess
 {
 public:
     /// The default class constructor.

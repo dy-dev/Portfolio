@@ -5,8 +5,8 @@
 #include "DirectoryVisitor.h"
 #include "DDSLoader.h"
 
-#include "Developer/ImageWrapper/Public/Interfaces/IImageWrapper.h"
-#include "Developer/ImageWrapper/Public/Interfaces/IImageWrapperModule.h"
+#include "Runtime/ImageWrapper/Public/Interfaces/IImageWrapper.h"
+#include "Runtime/ImageWrapper/Public/Interfaces/IImageWrapperModule.h"
 
 #include <string>
 

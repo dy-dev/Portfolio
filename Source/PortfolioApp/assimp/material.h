@@ -662,7 +662,7 @@ struct aiMaterialProperty
 *  The library defines a set of standard keys (AI_MATKEY_XXX).
 */
 #ifdef __cplusplus
-struct TEST_API aiMaterial
+struct PORTFOLIOAPP_API aiMaterial
 #else
 struct aiMaterial
 #endif
@@ -1341,7 +1341,7 @@ extern "C" {
  * @param pPropOut Pointer to receive a pointer to a valid aiMaterialProperty
  *        structure or NULL if the key has not been found. */
 // ---------------------------------------------------------------------------
-TEST_API C_ENUM aiReturn aiGetMaterialProperty(
+PORTFOLIOAPP_API C_ENUM aiReturn aiGetMaterialProperty(
 	 const C_STRUCT aiMaterial* pMat, 
     const char* pKey,
 	 unsigned int type,
@@ -1374,7 +1374,7 @@ TEST_API C_ENUM aiReturn aiGetMaterialProperty(
  * @return Specifies whether the key has been found. If not, the output
  *   arrays remains unmodified and pMax is set to 0.*/
 // ---------------------------------------------------------------------------
-TEST_API C_ENUM aiReturn aiGetMaterialFloatArray(
+PORTFOLIOAPP_API C_ENUM aiReturn aiGetMaterialFloatArray(
 	 const C_STRUCT aiMaterial* pMat, 
     const char* pKey,
 	 unsigned int type,
@@ -1427,7 +1427,7 @@ inline aiReturn aiGetMaterialFloat(const aiMaterial* pMat,
  *  from a material
  *
  * See the sample for aiGetMaterialFloatArray for more information.*/
-TEST_API C_ENUM aiReturn aiGetMaterialIntegerArray(const C_STRUCT aiMaterial* pMat, 
+PORTFOLIOAPP_API C_ENUM aiReturn aiGetMaterialIntegerArray(const C_STRUCT aiMaterial* pMat, 
     const char* pKey,
 	 unsigned int  type,
 	 unsigned int  index,
@@ -1466,7 +1466,7 @@ inline aiReturn aiGetMaterialInteger(const C_STRUCT aiMaterial* pMat,
 *
 * See the sample for aiGetMaterialFloat for more information*/
 // ---------------------------------------------------------------------------
-TEST_API C_ENUM aiReturn aiGetMaterialColor(const C_STRUCT aiMaterial* pMat, 
+PORTFOLIOAPP_API C_ENUM aiReturn aiGetMaterialColor(const C_STRUCT aiMaterial* pMat, 
     const char* pKey,
 	 unsigned int type,
     unsigned int index,
@@ -1478,7 +1478,7 @@ TEST_API C_ENUM aiReturn aiGetMaterialColor(const C_STRUCT aiMaterial* pMat,
 *
 * See the sample for aiGetMaterialFloat for more information*/
 // ---------------------------------------------------------------------------
-TEST_API C_ENUM aiReturn aiGetMaterialUVTransform(const C_STRUCT aiMaterial* pMat, 
+PORTFOLIOAPP_API C_ENUM aiReturn aiGetMaterialUVTransform(const C_STRUCT aiMaterial* pMat, 
     const char* pKey,
 	 unsigned int type,
     unsigned int index,
@@ -1490,7 +1490,7 @@ TEST_API C_ENUM aiReturn aiGetMaterialUVTransform(const C_STRUCT aiMaterial* pMa
 *
 * See the sample for aiGetMaterialFloat for more information.*/
 // ---------------------------------------------------------------------------
-TEST_API C_ENUM aiReturn aiGetMaterialString(const C_STRUCT aiMaterial* pMat, 
+PORTFOLIOAPP_API C_ENUM aiReturn aiGetMaterialString(const C_STRUCT aiMaterial* pMat, 
     const char* pKey,
 	 unsigned int type,
     unsigned int index,
@@ -1503,7 +1503,7 @@ TEST_API C_ENUM aiReturn aiGetMaterialString(const C_STRUCT aiMaterial* pMat,
  *  @return Number of textures for this type.
  *  @note A texture can be easily queried using #aiGetMaterialTexture() */
 // ---------------------------------------------------------------------------
-TEST_API unsigned int aiGetMaterialTextureCount(const C_STRUCT aiMaterial* pMat,  
+PORTFOLIOAPP_API unsigned int aiGetMaterialTextureCount(const C_STRUCT aiMaterial* pMat,  
 	C_ENUM aiTextureType type);
 
 // ---------------------------------------------------------------------------
@@ -1540,7 +1540,7 @@ TEST_API unsigned int aiGetMaterialTextureCount(const C_STRUCT aiMaterial* pMat,
  *  @return AI_SUCCESS on success, otherwise something else. Have fun.*/
 // ---------------------------------------------------------------------------
 #ifdef __cplusplus
-TEST_API aiReturn aiGetMaterialTexture(const C_STRUCT aiMaterial* mat,
+PORTFOLIOAPP_API aiReturn aiGetMaterialTexture(const C_STRUCT aiMaterial* mat,
 	aiTextureType type,
     unsigned int  index,
     aiString* path,

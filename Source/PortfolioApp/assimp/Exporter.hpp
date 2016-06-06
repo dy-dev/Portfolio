@@ -72,7 +72,7 @@ namespace Assimp	{
  * #ExportToBlob is especially useful if you intend to work 
  * with the data in-memory. 
 */
-class TEST_API Exporter
+class PORTFOLIOAPP_API Exporter
 	// TODO: causes good ol' base class has no dll interface warning
 //#ifdef __cplusplus
 //	: public boost::noncopyable

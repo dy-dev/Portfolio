@@ -4,16 +4,30 @@
 #include "PortfolioPlayerController.h"
 #include "PortfolioPlayerState.h"
 #include "ImageLoader.h"
+#include "AnimLoader.h"
 #include "ImagesHolder.h"
 
 APortFolioPlayerController::APortFolioPlayerController( const class FObjectInitializer& ObjectInitializer )
     : Super( ObjectInitializer ),
-    m_pImageLoader(nullptr),
+    m_pImageLoader( nullptr ),
+    AnimLoader(nullptr),
     ImagesHolder(nullptr)
 {
    // APortfolioPlayerState* PortfolioPlayerState = Cast<APortfolioPlayerState>( this->PlayerState );
-    m_pImageLoader = ConstructObject<UImageLoader>( UImageLoader::StaticClass() );
-    ImagesHolder = ConstructObject<UImagesHolder>( UImagesHolder::StaticClass() );
-    
-    m_pImageLoader->CreateSearchPaths( FPaths::Combine( *FPaths::GameSavedDir(), TEXT( "DiapoAssets" ) ), ImagesHolder );
+   }
+
+
+void APortFolioPlayerController::BeginPlay()
+{
+    Super::BeginPlay();
+    m_pImageLoader = NewObject<UImageLoader>( UImageLoader::StaticClass() );
+    AnimLoader = NewObject<UAnimLoader>( UImagesHolder::StaticClass() );
+    ImagesHolder = NewObject<UImagesHolder>( UImagesHolder::StaticClass() );
+
+
+}
+
+void APortFolioPlayerController::FillImageArray( const FString& FilePath )
+{
+    m_pImageLoader->CreateSearchPaths( FilePath, ImagesHolder );
 }

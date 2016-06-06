@@ -122,14 +122,14 @@ OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 	//////////////////////////////////////////////////////////////////////////
 
 #ifdef _MSC_VER
-#	undef TEST_API
+#	undef PORTFOLIOAPP_API
 
 	//////////////////////////////////////////////////////////////////////////
 	/* Define 'ASSIMP_BUILD_DLL_EXPORT' to build a DLL of the library */
 	//////////////////////////////////////////////////////////////////////////
 #	ifdef ASSIMP_BUILD_DLL_EXPORT
-#		define TEST_API __declspec(dllexport)
-#		define TEST_API_WINONLY __declspec(dllexport)
+#		define PORTFOLIOAPP_API __declspec(dllexport)
+#		define PORTFOLIOAPP_API_WINONLY __declspec(dllexport)
 #		pragma warning (disable : 4251)
 
 	//////////////////////////////////////////////////////////////////////////
@@ -137,11 +137,11 @@ OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 	 * an external DLL under Windows. Default is static linkage. */
 	//////////////////////////////////////////////////////////////////////////
 #	elif (defined ASSIMP_DLL)
-#		define TEST_API __declspec(dllimport)
-#		define TEST_API_WINONLY __declspec(dllimport)
+#		define PORTFOLIOAPP_API __declspec(dllimport)
+#		define PORTFOLIOAPP_API_WINONLY __declspec(dllimport)
 #	else
-#		define TEST_API 
-#		define TEST_API_WINONLY
+#		define PORTFOLIOAPP_API 
+#		define PORTFOLIOAPP_API_WINONLY
 #	endif
 
 	/* Force the compiler to inline a function, if possible
@@ -160,8 +160,8 @@ OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 	
 #	define AI_WONT_RETURN
 
-//#	define TEST_API __attribute__ ((visibility("default")))
-#	define TEST_API_WINONLY
+//#	define PORTFOLIOAPP_API __attribute__ ((visibility("default")))
+#	define PORTFOLIOAPP_API_WINONLY
 #	define AI_FORCE_INLINE inline
 #endif // (defined _MSC_VER)
 

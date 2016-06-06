@@ -53,7 +53,7 @@ class IOSystem;
  *  Several default implementations are provided, see #aiDefaultLogStream for more
  *  details. Writing your own implementation of LogStream is just necessary if these
  *  are not enough for your purpose. */
-class TEST_API LogStream
+class PORTFOLIOAPP_API LogStream
 #ifndef SWIG
 	: public Intern::AllocateFromAssimpHeap
 #endif

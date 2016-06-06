@@ -57,7 +57,7 @@ namespace Assimp
  * because the joining of vertices also considers tangents and bitangents for 
  * uniqueness.
  */
-class TEST_API CalcTangentsProcess : public BaseProcess
+class PORTFOLIOAPP_API CalcTangentsProcess : public BaseProcess
 {
 public:
 

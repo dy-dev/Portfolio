@@ -378,10 +378,10 @@ struct aiScene
 #ifdef __cplusplus
 
 	//! Default constructor - set everything to 0/NULL
-	TEST_API aiScene();
+	PORTFOLIOAPP_API aiScene();
 
 	//! Destructor
-	TEST_API ~aiScene();
+	PORTFOLIOAPP_API ~aiScene();
 
 	//! Check whether the scene contains meshes
 	//! Unless no special scene flags are set this will always be true.

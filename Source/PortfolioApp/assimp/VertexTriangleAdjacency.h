@@ -56,7 +56,7 @@ namespace Assimp	{
  *  @note Although it is called #VertexTriangleAdjacency, the current version does also
  *    support arbitrary polygons. */
 // --------------------------------------------------------------------------------------------
-class TEST_API VertexTriangleAdjacency
+class PORTFOLIOAPP_API VertexTriangleAdjacency
 {
 public:
 

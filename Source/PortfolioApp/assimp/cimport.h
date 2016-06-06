@@ -106,7 +106,7 @@ typedef int aiBool;
  *   #aiPostProcessSteps flags.
  * @return Pointer to the imported data or NULL if the import failed. 
  */
-TEST_API const C_STRUCT aiScene* aiImportFile( 
+PORTFOLIOAPP_API const C_STRUCT aiScene* aiImportFile( 
 	const char* pFile, 
 	unsigned int pFlags);
 
@@ -131,7 +131,7 @@ TEST_API const C_STRUCT aiScene* aiImportFile(
  * @return Pointer to the imported data or NULL if the import failed.  
  * @note Include <aiFileIO.h> for the definition of #aiFileIO.
  */
-TEST_API const C_STRUCT aiScene* aiImportFileEx( 
+PORTFOLIOAPP_API const C_STRUCT aiScene* aiImportFileEx( 
 	const char* pFile,
 	unsigned int pFlags,
 	C_STRUCT aiFileIO* pFS);
@@ -142,7 +142,7 @@ TEST_API const C_STRUCT aiScene* aiImportFileEx(
  * @param pProps #aiPropertyStore instance containing import settings. 
  * @see aiImportFileEx
  */
-TEST_API const C_STRUCT aiScene* aiImportFileExWithProperties( 
+PORTFOLIOAPP_API const C_STRUCT aiScene* aiImportFileExWithProperties( 
 	const char* pFile,
 	unsigned int pFlags,
 	C_STRUCT aiFileIO* pFS,
@@ -179,7 +179,7 @@ TEST_API const C_STRUCT aiScene* aiImportFileExWithProperties(
  * a custom IOSystem to make Assimp find these files and use
  * the regular aiImportFileEx()/aiImportFileExWithProperties() API.
  */
-TEST_API const C_STRUCT aiScene* aiImportFileFromMemory( 
+PORTFOLIOAPP_API const C_STRUCT aiScene* aiImportFileFromMemory( 
 	const char* pBuffer,
 	unsigned int pLength,
 	unsigned int pFlags,
@@ -191,7 +191,7 @@ TEST_API const C_STRUCT aiScene* aiImportFileFromMemory(
  * @param pProps #aiPropertyStore instance containing import settings. 
  * @see aiImportFileFromMemory
  */
-TEST_API const C_STRUCT aiScene* aiImportFileFromMemoryWithProperties( 
+PORTFOLIOAPP_API const C_STRUCT aiScene* aiImportFileFromMemoryWithProperties( 
 	const char* pBuffer,
 	unsigned int pLength,
 	unsigned int pFlags,
@@ -213,7 +213,7 @@ TEST_API const C_STRUCT aiScene* aiImportFileFromMemoryWithProperties(
  *   the #aiProcess_ValidateDS flag is currently the only post processing step 
  *   which can actually cause the scene to be reset to NULL.
  */
-TEST_API const C_STRUCT aiScene* aiApplyPostProcessing(
+PORTFOLIOAPP_API const C_STRUCT aiScene* aiApplyPostProcessing(
 	const C_STRUCT aiScene* pScene,
 	unsigned int pFlags);
 
@@ -237,7 +237,7 @@ TEST_API const C_STRUCT aiScene* aiApplyPostProcessing(
  *    Pass NULL for all other flags.
  *  @return The log stream. callback is set to NULL if something went wrong.
  */
-TEST_API C_STRUCT aiLogStream aiGetPredefinedLogStream(
+PORTFOLIOAPP_API C_STRUCT aiLogStream aiGetPredefinedLogStream(
 	C_ENUM aiDefaultLogStream pStreams,
 	const char* file);
 
@@ -251,7 +251,7 @@ TEST_API C_STRUCT aiLogStream aiGetPredefinedLogStream(
  *    call aiDetachLogStream() on every single log stream you attach. 
  *    Alternatively (for the lazy folks) #aiDetachAllLogStreams is provided.
  */
-TEST_API void aiAttachLogStream(
+PORTFOLIOAPP_API void aiAttachLogStream(
 	const C_STRUCT aiLogStream* stream);
 
 // --------------------------------------------------------------------------------
@@ -261,7 +261,7 @@ TEST_API void aiAttachLogStream(
  *  didn't read correctly.
  *  @param d AI_TRUE or AI_FALSE, your decision.
  */
-TEST_API void aiEnableVerboseLogging(aiBool d);
+PORTFOLIOAPP_API void aiEnableVerboseLogging(aiBool d);
 
 // --------------------------------------------------------------------------------
 /** Detach a custom log stream from the libraries' logging system.
@@ -272,7 +272,7 @@ TEST_API void aiEnableVerboseLogging(aiBool d);
  *  @return AI_SUCCESS if the log stream has been detached successfully.
  *  @see aiDetachAllLogStreams
  */
-TEST_API C_ENUM aiReturn aiDetachLogStream(
+PORTFOLIOAPP_API C_ENUM aiReturn aiDetachLogStream(
 	const C_STRUCT aiLogStream* stream);
 
 // --------------------------------------------------------------------------------
@@ -283,7 +283,7 @@ TEST_API C_ENUM aiReturn aiDetachLogStream(
  *  @see aiAttachLogStream
  *  @see aiDetachLogStream
  */
-TEST_API void aiDetachAllLogStreams(void);
+PORTFOLIOAPP_API void aiDetachAllLogStreams(void);
 
 // --------------------------------------------------------------------------------
 /** Releases all resources associated with the given import process.
@@ -291,7 +291,7 @@ TEST_API void aiDetachAllLogStreams(void);
  * Call this function after you're done with the imported data.
  * @param pScene The imported data to release. NULL is a valid value.
  */
-TEST_API void aiReleaseImport( 
+PORTFOLIOAPP_API void aiReleaseImport( 
 	const C_STRUCT aiScene* pScene);
 
 // --------------------------------------------------------------------------------
@@ -301,7 +301,7 @@ TEST_API void aiReleaseImport(
  * import process. NULL if there was no error. There can't be an error if you
  * got a non-NULL #aiScene from #aiImportFile/#aiImportFileEx/#aiApplyPostProcessing.
  */
-TEST_API const char* aiGetErrorString();
+PORTFOLIOAPP_API const char* aiGetErrorString();
 
 // --------------------------------------------------------------------------------
 /** Returns whether a given file extension is supported by ASSIMP
@@ -310,7 +310,7 @@ TEST_API const char* aiGetErrorString();
  * Must include a leading dot '.'. Example: ".3ds", ".md3"
  * @return AI_TRUE if the file extension is supported.
  */
-TEST_API aiBool aiIsExtensionSupported(
+PORTFOLIOAPP_API aiBool aiIsExtensionSupported(
 	const char* szExtension);
 
 // --------------------------------------------------------------------------------
@@ -321,7 +321,7 @@ TEST_API aiBool aiIsExtensionSupported(
  * @param szOut String to receive the extension list.
  * Format of the list: "*.3ds;*.obj;*.dae". NULL is not a valid parameter.
  */
-TEST_API void aiGetExtensionList(
+PORTFOLIOAPP_API void aiGetExtensionList(
 	C_STRUCT aiString* szOut);
 
 // --------------------------------------------------------------------------------
@@ -329,7 +329,7 @@ TEST_API void aiGetExtensionList(
  * @param pIn Input asset.
  * @param in Data structure to be filled. 
  */
-TEST_API void aiGetMemoryRequirements(
+PORTFOLIOAPP_API void aiGetMemoryRequirements(
 	const C_STRUCT aiScene* pIn,
 	C_STRUCT aiMemoryInfo* in);
 
@@ -341,13 +341,13 @@ TEST_API void aiGetMemoryRequirements(
  * @return New property store. Property stores need to be manually destroyed using
  *   the #aiReleasePropertyStore API function.
  */
-TEST_API C_STRUCT aiPropertyStore* aiCreatePropertyStore(void);
+PORTFOLIOAPP_API C_STRUCT aiPropertyStore* aiCreatePropertyStore(void);
 
 // --------------------------------------------------------------------------------
 /** Delete a property store.
  * @param p Property store to be deleted.
  */
-TEST_API void aiReleasePropertyStore(C_STRUCT aiPropertyStore* p);
+PORTFOLIOAPP_API void aiReleasePropertyStore(C_STRUCT aiPropertyStore* p);
 
 // --------------------------------------------------------------------------------
 /** Set an integer property. 
@@ -360,7 +360,7 @@ TEST_API void aiReleasePropertyStore(C_STRUCT aiPropertyStore* p);
  *   public properties are defined in the config.h header file (#AI_CONFIG_XXX).
  * @param value New value for the property
  */
-TEST_API void aiSetImportPropertyInteger(
+PORTFOLIOAPP_API void aiSetImportPropertyInteger(
 	C_STRUCT aiPropertyStore* store,
 	const char* szName, 
 	int value);
@@ -376,7 +376,7 @@ TEST_API void aiSetImportPropertyInteger(
  *   public properties are defined in the config.h header file (#AI_CONFIG_XXX).
  * @param value New value for the property
  */
-TEST_API void aiSetImportPropertyFloat(
+PORTFOLIOAPP_API void aiSetImportPropertyFloat(
 	C_STRUCT aiPropertyStore* store,
 	const char* szName,
 	float value);
@@ -393,7 +393,7 @@ TEST_API void aiSetImportPropertyFloat(
  *   public properties are defined in the config.h header file (#AI_CONFIG_XXX).
  * @param value New value for the property
  */
-TEST_API void aiSetImportPropertyString(
+PORTFOLIOAPP_API void aiSetImportPropertyString(
 	C_STRUCT aiPropertyStore* store,
 	const char* szName,
 	const C_STRUCT aiString* st);
@@ -410,7 +410,7 @@ TEST_API void aiSetImportPropertyString(
  *   public properties are defined in the config.h header file (#AI_CONFIG_XXX).
  * @param value New value for the property
  */
-TEST_API void aiSetImportPropertyMatrix(
+PORTFOLIOAPP_API void aiSetImportPropertyMatrix(
 	C_STRUCT aiPropertyStore* store,
 	const char* szName,
 	const C_STRUCT aiMatrix4x4* mat);
@@ -421,7 +421,7 @@ TEST_API void aiSetImportPropertyMatrix(
  *  @param mat Matrix to 'quaternionize'.
  *  @see aiQuaternion(const aiMatrix3x3& pRotMatrix)
  */
-TEST_API void aiCreateQuaternionFromMatrix(
+PORTFOLIOAPP_API void aiCreateQuaternionFromMatrix(
 	C_STRUCT aiQuaternion* quat,
 	const C_STRUCT aiMatrix3x3* mat);
 
@@ -435,7 +435,7 @@ TEST_API void aiCreateQuaternionFromMatrix(
  * @param position Receives the translational component.
  * @see aiMatrix4x4::Decompose (aiVector3D&, aiQuaternion&, aiVector3D&) const;
  */
-TEST_API void aiDecomposeMatrix(
+PORTFOLIOAPP_API void aiDecomposeMatrix(
 	const C_STRUCT aiMatrix4x4* mat,
 	C_STRUCT aiVector3D* scaling, 
 	C_STRUCT aiQuaternion* rotation,
@@ -445,14 +445,14 @@ TEST_API void aiDecomposeMatrix(
 /** Transpose a 4x4 matrix.
  *  @param mat Pointer to the matrix to be transposed
  */
-TEST_API void aiTransposeMatrix4(
+PORTFOLIOAPP_API void aiTransposeMatrix4(
 	C_STRUCT aiMatrix4x4* mat);
 
 // --------------------------------------------------------------------------------
 /** Transpose a 3x3 matrix.
  *  @param mat Pointer to the matrix to be transposed
  */
-TEST_API void aiTransposeMatrix3(
+PORTFOLIOAPP_API void aiTransposeMatrix3(
 	C_STRUCT aiMatrix3x3* mat);
 
 // --------------------------------------------------------------------------------
@@ -460,7 +460,7 @@ TEST_API void aiTransposeMatrix3(
  *  @param vec Vector to be transformed.
  *  @param mat Matrix to transform the vector with.
  */
-TEST_API void aiTransformVecByMatrix3(
+PORTFOLIOAPP_API void aiTransformVecByMatrix3(
 	C_STRUCT aiVector3D* vec, 
 	const C_STRUCT aiMatrix3x3* mat);
 
@@ -469,7 +469,7 @@ TEST_API void aiTransformVecByMatrix3(
  *  @param vec Vector to be transformed.
  *  @param mat Matrix to transform the vector with.
  */
-TEST_API void aiTransformVecByMatrix4(
+PORTFOLIOAPP_API void aiTransformVecByMatrix4(
 	C_STRUCT aiVector3D* vec, 
 	const C_STRUCT aiMatrix4x4* mat);
 
@@ -478,7 +478,7 @@ TEST_API void aiTransformVecByMatrix4(
  *  @param dst First factor, receives result.
  *  @param src Matrix to be multiplied with 'dst'.
  */
-TEST_API void aiMultiplyMatrix4(
+PORTFOLIOAPP_API void aiMultiplyMatrix4(
 	C_STRUCT aiMatrix4x4* dst, 
 	const C_STRUCT aiMatrix4x4* src);
 
@@ -487,7 +487,7 @@ TEST_API void aiMultiplyMatrix4(
  *  @param dst First factor, receives result.
  *  @param src Matrix to be multiplied with 'dst'.
  */
-TEST_API void aiMultiplyMatrix3(
+PORTFOLIOAPP_API void aiMultiplyMatrix3(
 	C_STRUCT aiMatrix3x3* dst, 
 	const C_STRUCT aiMatrix3x3* src);
 
@@ -495,14 +495,14 @@ TEST_API void aiMultiplyMatrix3(
 /** Get a 3x3 identity matrix.
  *  @param mat Matrix to receive its personal identity
  */
-TEST_API void aiIdentityMatrix3(
+PORTFOLIOAPP_API void aiIdentityMatrix3(
 	C_STRUCT aiMatrix3x3* mat);
 
 // --------------------------------------------------------------------------------
 /** Get a 4x4 identity matrix.
  *  @param mat Matrix to receive its personal identity
  */
-TEST_API void aiIdentityMatrix4(
+PORTFOLIOAPP_API void aiIdentityMatrix4(
 	C_STRUCT aiMatrix4x4* mat);
 
 

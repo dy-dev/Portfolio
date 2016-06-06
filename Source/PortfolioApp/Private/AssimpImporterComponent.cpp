@@ -6,8 +6,8 @@
 #include "assimp/postprocess.h"
 #include "assimp/scene.h"
 
-#include "Developer/ImageWrapper/Public/Interfaces/IImageWrapper.h"
-#include "Developer/ImageWrapper/Public/Interfaces/IImageWrapperModule.h"
+#include "Runtime/ImageWrapper/Public/Interfaces/IImageWrapper.h"
+#include "Runtime/ImageWrapper/Public/Interfaces/IImageWrapperModule.h"
 
 #include <string>       // std::string
 #include <iostream>     // std::cout
@@ -31,11 +31,11 @@ UAssimpImporterComponent::UAssimpImporterComponent()
 
 void UAssimpImporterComponent::CreateInterfaceToMainMaterial()
 {
-	static ConstructorHelpers::FObjectFinder<UMaterial> mainMaterial(TEXT("Material'/Game/Blueprint/AssetMaterial.AssetMaterial'"));
-	if (mainMaterial.Object != NULL)
-	{
-		InterfaceToMainMaterial = (UMaterial*)mainMaterial.Object;
-	}
+    static ConstructorHelpers::FObjectFinder<UMaterial> mainMaterial( TEXT( "Material'/Game/Material/AssetMaterial.AssetMaterial'" ) );
+    if ( mainMaterial.Object != NULL )
+    {
+        InterfaceToMainMaterial = ( UMaterial* )mainMaterial.Object;
+    }
 }
 
 // Called when the game starts
@@ -149,40 +149,41 @@ bool UAssimpImporterComponent::Load3DModel(const FString& FilePath)
 	}
 	fclose(log);
 
-	LoadTexture(FilePath);
+    LoadTexture(FilePath);
+    
 	return true;
 }
 
-void UAssimpImporterComponent::LoadTexture(const FString& FilePath)
+void UAssimpImporterComponent::LoadTexture( const FString& FilePath )
 {
-	IImageWrapperModule& ImageWrapperModule = FModuleManager::LoadModuleChecked<IImageWrapperModule>(FName("ImageWrapper"));
-	// Note: PNG format.  Other formats are supported
-	IImageWrapperPtr ImageWrapper = ImageWrapperModule.CreateImageWrapper(EImageFormat::PNG);
-	TArray<uint8> RawFileData;
-	FString TexturePath = FPaths::GetPath(FilePath) / FPaths::GetBaseFilename(FilePath) + FString(".png");
-	std::string strname(TCHAR_TO_ANSI(*TexturePath));
-	if (FFileHelper::LoadFileToArray(RawFileData, *TexturePath))
-	{
-		if (ImageWrapper.IsValid() && ImageWrapper->SetCompressed(RawFileData.GetData(), RawFileData.Num()))
-		{
-			const TArray<uint8>* UncompressedBGRA = NULL;
-			if (ImageWrapper->GetRaw(ERGBFormat::BGRA, 8, UncompressedBGRA))
-			{
-				ModelTexture = UTexture2D::CreateTransient(ImageWrapper->GetWidth(), ImageWrapper->GetHeight(), PF_B8G8R8A8);
-				// Fill in the source data from the file
-				FTexture2DMipMap& Mip = ModelTexture->PlatformData->Mips[0];
-				void* Data = Mip.BulkData.Lock(LOCK_READ_WRITE);
-				FMemory::Memcpy(Data, UncompressedBGRA->GetData(), UncompressedBGRA->Num());
-				Mip.BulkData.Unlock();
-				ModelTexture->UpdateResource();
-			}
-		}
-	}
+    IImageWrapperModule& ImageWrapperModule = FModuleManager::LoadModuleChecked<IImageWrapperModule>( FName( "ImageWrapper" ) );
+    // Note: PNG format.  Other formats are supported
+    IImageWrapperPtr ImageWrapper = ImageWrapperModule.CreateImageWrapper( EImageFormat::PNG );
+    TArray<uint8> RawFileData;
+    FString TexturePath = FPaths::GetPath( FilePath ) / FPaths::GetBaseFilename( FilePath ) + FString( ".png" );
+    std::string strname( TCHAR_TO_ANSI( *TexturePath ) );
+    if ( FFileHelper::LoadFileToArray( RawFileData, *TexturePath ) )
+    {
+        if ( ImageWrapper.IsValid() && ImageWrapper->SetCompressed( RawFileData.GetData(), RawFileData.Num() ) )
+        {
+            const TArray<uint8>* UncompressedBGRA = NULL;
+            if ( ImageWrapper->GetRaw( ERGBFormat::BGRA, 8, UncompressedBGRA ) )
+            {
+                ModelTexture = UTexture2D::CreateTransient( ImageWrapper->GetWidth(), ImageWrapper->GetHeight(), PF_B8G8R8A8 );
+                // Fill in the source data from the file
+                FTexture2DMipMap& Mip = ModelTexture->PlatformData->Mips[0];
+                void* Data = Mip.BulkData.Lock( LOCK_READ_WRITE );
+                FMemory::Memcpy( Data, UncompressedBGRA->GetData(), UncompressedBGRA->Num() );
+                Mip.BulkData.Unlock();
+                ModelTexture->UpdateResource();
+            }
+        }
+    }
 }
 
 void UAssimpImporterComponent::SetMaterialToProceduralMeshComp(UProceduralMeshComponent* procMeshComp)
 {
 	UMaterialInstanceDynamic* dynamicMatInstance = UMaterialInstanceDynamic::Create(InterfaceToMainMaterial, this);
 	procMeshComp->SetMaterial(0, dynamicMatInstance);
-	dynamicMatInstance->SetTextureParameterValue(FName("T2DParam"), ModelTexture);
+    dynamicMatInstance->SetTextureParameterValue(FName("T2DParam"), ModelTexture);
 }

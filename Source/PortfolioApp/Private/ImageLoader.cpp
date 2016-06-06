@@ -28,7 +28,7 @@ void UImageLoader::CreateSearchPaths(FString p_sPath, UImagesHolder* p_pHolder )
     		FPaths::NormalizeDirectoryName( p_sPath );
     		FString FinalPath = p_sPath;// +"/" + "*.*";
     		FString Str;
-    		GetDirectories(FinalPath, DirNamesOut, true);
+    	/*	GetDirectories(FinalPath, DirNamesOut, true);
     	}
 
     	for (auto names : DirNamesOut)
@@ -38,15 +38,17 @@ void UImageLoader::CreateSearchPaths(FString p_sPath, UImagesHolder* p_pHolder )
     		std::string strname(TCHAR_TO_ANSI(*cleanName));
     		FString curPath = names.LeftChop(cleanName.Len() + 1);
     		std::string strpath(TCHAR_TO_ANSI(*curPath));
-
+           */
     		TArray<FString> Files;
-    		GetFiles(names, Files, false);
+    		GetFiles( p_sPath, Files, false);
+                                                          
     		for (auto fileName : Files)
     		{
     			if (FPaths::GetExtension(fileName).ToLower() != "db")
     			{
     				TArray<uint8> RawFileData;
-    				FString filePath = FPaths::Combine(*names, *fileName);
+                   // FString filePath = FPaths::Combine( *names, *fileName );
+                    FString filePath = FPaths::Combine(*FinalPath, *fileName);
     				std::string strfileName(TCHAR_TO_ANSI(*filePath));
 
     				if (FFileHelper::LoadFileToArray(RawFileData, *filePath))

@@ -64,7 +64,7 @@ class IOStream;
  *  supply a custom implementation for IOStream.
  *
  *  @see Importer::SetIOHandler() */
-class TEST_API IOSystem
+class PORTFOLIOAPP_API IOSystem
 #ifndef SWIG
 	: public Intern::AllocateFromAssimpHeap
 #endif

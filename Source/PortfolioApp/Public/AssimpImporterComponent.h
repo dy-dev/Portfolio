@@ -3,7 +3,7 @@
 #pragma once
 
 #include "Components/ActorComponent.h"
-#include "ProceduralMeshComponent.h"
+#include "ProceduralMeshComponent.h"              
 #include "AssimpImporterComponent.generated.h"
 
 UCLASS(ClassGroup = (Custom), meta = (BlueprintSpawnableComponent))
@@ -46,9 +46,9 @@ public:
 	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "3D Loader")
 		UTexture2D* ModelTexture;
 
-	//Interface to the material we need to modify
-	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "3D Loader")
-		UMaterialInterface* InterfaceToMainMaterial;
+    //Interface to the material we need to modify
+    UPROPERTY( EditAnywhere, BlueprintReadWrite, Category = "3D Loader" )
+        UMaterialInterface* InterfaceToMainMaterial;
 
 	//Path to the 3D model
 	UPROPERTY(Transient, BlueprintReadWrite, Category = "3D Loader")
@@ -63,8 +63,10 @@ public:
 
 	UFUNCTION(BlueprintCallable, Category = "3D Loader")
 		void SetMaterialToProceduralMeshComp(UProceduralMeshComponent* procMeshComp);
-
+  
 private:
 	void CreateInterfaceToMainMaterial();
-	void LoadTexture(const FString& FilePath);
+    void LoadTexture( const FString& FilePath );
+
+
 };

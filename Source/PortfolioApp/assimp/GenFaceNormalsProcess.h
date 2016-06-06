@@ -51,7 +51,7 @@ namespace Assimp
 // ---------------------------------------------------------------------------
 /** The GenFaceNormalsProcess computes face normals for all faces of all meshes
 */
-class TEST_API GenFaceNormalsProcess : public BaseProcess
+class PORTFOLIOAPP_API GenFaceNormalsProcess : public BaseProcess
 {
 public:
 

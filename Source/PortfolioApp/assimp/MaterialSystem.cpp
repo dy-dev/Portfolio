@@ -296,7 +296,7 @@ aiReturn aiGetMaterialString(const aiMaterial* pMat,
 
 // ------------------------------------------------------------------------------------------------
 // Get the number of textures on a particular texture stack
-TEST_API unsigned int aiGetMaterialTextureCount(const C_STRUCT aiMaterial* pMat,  
+PORTFOLIOAPP_API unsigned int aiGetMaterialTextureCount(const C_STRUCT aiMaterial* pMat,  
 	C_ENUM aiTextureType type)
 {
 	ai_assert (pMat != NULL);

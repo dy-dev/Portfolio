@@ -6,8 +6,8 @@
 #include "SDDFileTree.h"
 #include "SlateOptMacros.h"
 #include "DirectoryVisitor.h"
-#include "Developer/ImageWrapper/Public/Interfaces/IImageWrapper.h"
-#include "Developer/ImageWrapper/Public/Interfaces/IImageWrapperModule.h"
+#include "Runtime/ImageWrapper/Public/Interfaces/IImageWrapper.h"
+#include "Runtime/ImageWrapper/Public/Interfaces/IImageWrapperModule.h"
 
 //
 //The Data
@@ -214,7 +214,7 @@ TSharedRef<ITableRow> SDDFileTree::DDFileTree_OnGenerateRow(FDDFileTreeItemPtr I
 	return SNew(STableRow< FDDFileTreeItemPtr >, OwnerTable)
 		[
 			SNew(STextBlock)
-			.Text(Item->GetDisplayName())
+		//	.Text(Item->GetDisplayName())
 		.Font(FSlateFontInfo(FPaths::EngineContentDir() / TEXT("/Slate/Fonts/Roboto-Bold.ttf"), 24))
 		.ColorAndOpacity(FLinearColor(1, 0, 1, 1))
 		.ShadowColorAndOpacity(FLinearColor::Black)

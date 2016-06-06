@@ -52,7 +52,7 @@ namespace Assimp	{
  *
  * Does nothing! Used by default if the application hasn't requested a 
  * custom logger via #DefaultLogger::set() or #DefaultLogger::create(); */
-class TEST_API NullLogger 
+class PORTFOLIOAPP_API NullLogger 
 	: public Logger	{
 
 public:

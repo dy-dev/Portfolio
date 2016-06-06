@@ -17,15 +17,16 @@ public class PortfolioApp : ModuleRules
 
     public PortfolioApp(TargetInfo Target)
 	{
-		PublicDependencyModuleNames.AddRange(new string[] { "Core", "CoreUObject", "Engine", "InputCore" });
+		PublicDependencyModuleNames.AddRange(new string[] { "Core", "CoreUObject", "Engine", "InputCore", "MediaAssets", "UMG", "Slate", "SlateCore" });
 
 		PrivateDependencyModuleNames.AddRange(new string[] {  });
 
         PrivateDependencyModuleNames.AddRange(new string[] { "ProceduralMeshComponent" });
-
         // Uncomment if you are using Slate UI
         PrivateDependencyModuleNames.AddRange(new string[] { "Slate", "SlateCore" });
 
+        PublicIncludePaths.AddRange(new string[] { "MediaAssets/Public", });
+        PrivateIncludePathModuleNames.AddRange(new string[] { "Media", });
         //PublicAdditionalLibraries.Add(Path.Combine(AssimpPath, "lib64", "assimp.lib")); //TODO : FIXME MAYBE
         //PublicAdditionalLibraries.Add(Path.Combine(AssimpStaticPath, "assimp.lib"));
         //PublicIncludePaths.Add(Path.Combine(AssimpPath, "include"));

@@ -81,7 +81,7 @@ struct aiExportFormatDesc
 /** Returns the number of export file formats available in the current Assimp build.
  * Use aiGetExportFormatDescription() to retrieve infos of a specific export format.
  */
-TEST_API size_t aiGetExportFormatCount(void);
+PORTFOLIOAPP_API size_t aiGetExportFormatCount(void);
 
 
 // --------------------------------------------------------------------------------
@@ -91,7 +91,7 @@ TEST_API size_t aiGetExportFormatCount(void);
  *    0 to #aiGetExportFormatCount()
  * @return A description of that specific export format. NULL if pIndex is out of range.
  */
-TEST_API const C_STRUCT aiExportFormatDesc* aiGetExportFormatDescription( size_t pIndex);
+PORTFOLIOAPP_API const C_STRUCT aiExportFormatDesc* aiGetExportFormatDescription( size_t pIndex);
 
 
 // --------------------------------------------------------------------------------
@@ -103,13 +103,13 @@ TEST_API const C_STRUCT aiExportFormatDesc* aiGetExportFormatDescription( size_t
  *  @param pOut Receives a modifyable copy of the scene. Use aiFreeScene() to
  *    delete it again.
  */
-TEST_API void aiCopyScene(const C_STRUCT aiScene* pIn, 
+PORTFOLIOAPP_API void aiCopyScene(const C_STRUCT aiScene* pIn, 
 	C_STRUCT aiScene** pOut);
 
 
 // --------------------------------------------------------------------------------
 /** Frees a scene copy created using aiCopyScene() */
-TEST_API void aiFreeScene(const C_STRUCT aiScene* pIn);
+PORTFOLIOAPP_API void aiFreeScene(const C_STRUCT aiScene* pIn);
 
 // --------------------------------------------------------------------------------
 /** Exports the given scene to a chosen file format and writes the result file(s) to disk.
@@ -153,7 +153,7 @@ TEST_API void aiFreeScene(const C_STRUCT aiScene* pIn);
 * @note Use aiCopyScene() to get a modifiable copy of a previously
 *   imported scene.
 */
-TEST_API aiReturn aiExportScene( const C_STRUCT aiScene* pScene, 
+PORTFOLIOAPP_API aiReturn aiExportScene( const C_STRUCT aiScene* pScene, 
 	const char* pFormatId, 
 	const char* pFileName,  
 	unsigned int pPreprocessing);
@@ -174,7 +174,7 @@ TEST_API aiReturn aiExportScene( const C_STRUCT aiScene* pScene,
 * @note Use aiCopyScene() to get a modifiable copy of a previously
 *   imported scene.
 */
-TEST_API aiReturn aiExportSceneEx( const C_STRUCT aiScene* pScene, 
+PORTFOLIOAPP_API aiReturn aiExportSceneEx( const C_STRUCT aiScene* pScene, 
 	const char* pFormatId, 
 	const char* pFileName, 
 	C_STRUCT aiFileIO* pIO,  
@@ -239,7 +239,7 @@ private:
 * @param pPreprocessing Please see the documentation for #aiExportScene
 * @return the exported data or NULL in case of error
 */
-TEST_API const C_STRUCT aiExportDataBlob* aiExportSceneToBlob( const C_STRUCT aiScene* pScene, const char* pFormatId,  unsigned int pPreprocessing );
+PORTFOLIOAPP_API const C_STRUCT aiExportDataBlob* aiExportSceneToBlob( const C_STRUCT aiScene* pScene, const char* pFormatId,  unsigned int pPreprocessing );
 
 
 // --------------------------------------------------------------------------------
@@ -247,7 +247,7 @@ TEST_API const C_STRUCT aiExportDataBlob* aiExportSceneToBlob( const C_STRUCT ai
 * returned by aiExportScene(). 
 * @param pData the data blob returned by #aiExportSceneToBlob
 */
-TEST_API void aiReleaseExportBlob( const C_STRUCT aiExportDataBlob* pData );
+PORTFOLIOAPP_API void aiReleaseExportBlob( const C_STRUCT aiExportDataBlob* pData );
 
 #ifdef __cplusplus
 }

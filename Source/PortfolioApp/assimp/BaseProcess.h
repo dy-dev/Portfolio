@@ -211,7 +211,7 @@ private:
  * should be executed. If the function returns true, the class' Execute() 
  * function is called subsequently.
  */
-class TEST_API_WINONLY BaseProcess 
+class PORTFOLIOAPP_API_WINONLY BaseProcess 
 {
 	friend class Importer;
 
