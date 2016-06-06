@@ -1,6 +1,6 @@
 {
 	"FileVersion": 3,
-	"EngineAssociation": "4.10",
+	"EngineAssociation": "4.12",
 	"Category": "",
 	"Description": "",
 	"Modules": [
@@ -12,11 +12,13 @@
 				"Slate",
 				"SlateCore",
 				"Engine",
-				"UMG"
+				"UMG",
+				"CoreUObject"
 			]
 		}
 	],
 	"TargetPlatforms": [
-		"Android"
+		"Android",
+		"WindowsNoEditor"
 	]
 }
