@@ -120,16 +120,16 @@ OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 #include <memory>
 
 // Boost headers
-#include <D:/Personal Dev Projects/Test/Source/Test/assimp/BoostWorkaround/boost/pointer_cast.hpp>
-#include <D:/Personal Dev Projects/Test/Source/Test/assimp/BoostWorkaround/boost/scoped_ptr.hpp>
-#include <D:/Personal Dev Projects/Test/Source/Test/assimp/BoostWorkaround/boost/scoped_array.hpp>
-#include <D:/Personal Dev Projects/Test/Source/Test/assimp/BoostWorkaround/boost/shared_ptr.hpp>
-#include <D:/Personal Dev Projects/Test/Source/Test/assimp/BoostWorkaround/boost/shared_array.hpp>
-#include <D:/Personal Dev Projects/Test/Source/Test/assimp/BoostWorkaround/boost/make_shared.hpp>
-#include <D:/Personal Dev Projects/Test/Source/Test/assimp/BoostWorkaround/boost/format.hpp>
-#include <D:/Personal Dev Projects/Test/Source/Test/assimp/BoostWorkaround/boost/foreach.hpp>
-#include <D:/Personal Dev Projects/Test/Source/Test/assimp/BoostWorkaround/boost/static_assert.hpp>
-#include <D:/Personal Dev Projects/Test/Source/Test/assimp/BoostWorkaround/boost/lexical_cast.hpp>
+#include "./BoostWorkaround/boost/pointer_cast.hpp"
+#include "./BoostWorkaround/boost/scoped_ptr.hpp"
+#include "./BoostWorkaround/boost/scoped_array.hpp"
+#include "./BoostWorkaround/boost/shared_ptr.hpp"
+#include "./BoostWorkaround/boost/shared_array.hpp"
+#include "./BoostWorkaround/boost/make_shared.hpp"
+#include "./BoostWorkaround/boost/format.hpp"
+#include "./BoostWorkaround/boost/foreach.hpp"
+#include "./BoostWorkaround/boost/static_assert.hpp"
+#include "./BoostWorkaround/boost/lexical_cast.hpp"
 
 // Public ASSIMP headers
 #include "DefaultLogger.hpp"

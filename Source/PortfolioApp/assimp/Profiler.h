@@ -44,7 +44,7 @@ OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 #ifndef INCLUDED_PROFILER_H
 #define INCLUDED_PROFILER_H
 
-#include "D:/Personal Dev Projects/Test/Source/Test/assimp/BoostWorkaround/boost/timer.hpp"
+#include "./BoostWorkaround/boost/timer.hpp"
 
 #include "DefaultLogger.hpp"
 #include "TinyFormatter.h"
