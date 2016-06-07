@@ -2,9 +2,12 @@
 
 #include "PortfolioApp.h"
 #include "DirectoryVisitor.h"
+#include "Runtime/ImageWrapper/Public/Interfaces/IImageWrapper.h"
+#include "Runtime/ImageWrapper/Public/Interfaces/IImageWrapperModule.h"
 #include "Runtime/UMG/Public/Components/Button.h" 
 #include "Category_Button.h"
 #include "Categories_ScrollBox.h"
+#include <string>
 
 
 UCategories_ScrollBox::UCategories_ScrollBox( class FObjectInitializer const & ObjectInitializer )

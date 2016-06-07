@@ -3,7 +3,12 @@
 #include "PortfolioApp.h"
 #include "ImageLoader.h"
 #include "ImagesHolder.h"
+#include "Runtime/Engine/Public/DDSLoader.h"
 
+#include "Runtime/ImageWrapper/Public/Interfaces/IImageWrapper.h"
+#include "Runtime/ImageWrapper/Public/Interfaces/IImageWrapperModule.h"
+
+#include "DirectoryVisitor.h"
 
 #include <string>
 

@@ -8,6 +8,10 @@
 #include "Runtime/ImageWrapper/Public/Interfaces/IImageWrapper.h"
 #include "Runtime/ImageWrapper/Public/Interfaces/IImageWrapperModule.h"
 
+#include "Runtime/MediaAssets/Public/MediaPlayer.h"
+
+
+
 #include <string>
 
 // Sets default values for this component's properties

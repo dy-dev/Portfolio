@@ -3,6 +3,7 @@
 #pragma once
 
 #include "Components/ActorComponent.h"
+#include "Runtime/MediaAssets/Public/MediaTexture.h"
 #include "AnimLoaderComponent.generated.h"
 
 
