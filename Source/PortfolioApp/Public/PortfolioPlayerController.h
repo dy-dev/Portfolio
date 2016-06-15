@@ -5,7 +5,7 @@
 #include "GameFramework/PlayerController.h"
 #include "PortFolioPlayerController.generated.h"
 
-
+//todo fwd declare filesort
 class UImageLoader;
 class UAnimLoader;
 class UImagesHolder;
@@ -35,6 +35,6 @@ protected:
 
 
 private:
-    UImageLoader* m_pImageLoader;
-
+    //UImageLoader* m_pImageLoader;
+	ContentManager* m_pContentManager;
 };

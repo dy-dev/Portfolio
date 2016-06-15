@@ -24,11 +24,11 @@ UImageLoader::~UImageLoader()
 void UImageLoader::CreateSearchPaths(FString p_sPath, UImagesHolder* p_pHolder )
 {
     ImagesPaths = p_sPath;
-    if (FPaths::DirectoryExists( p_sPath ))
+    if (FPaths::DirectoryExists( p_sPath ))//If the folder exists
     {
     	IFileManager& FileManager = IFileManager::Get();
     	TArray<FString> DirNamesOut;
-    	if ( p_sPath.Len() > 1)
+    	if ( p_sPath.Len() > 1)//Minimum count of letters of the folder must be 2
     	{
     		FPaths::NormalizeDirectoryName( p_sPath );
     		FString FinalPath = p_sPath;// +"/" + "*.*";
@@ -45,20 +45,20 @@ void UImageLoader::CreateSearchPaths(FString p_sPath, UImagesHolder* p_pHolder )
     		std::string strpath(TCHAR_TO_ANSI(*curPath));
            */
     		TArray<FString> Files;
-    		GetFiles( p_sPath, Files, false);
+    		GetFiles( p_sPath, Files, false); //We put all the files in Files
                                                           
-    		for (auto fileName : Files)
+    		for (auto fileName : Files) //For each file 
     		{
-    			if (FPaths::GetExtension(fileName).ToLower() != "db")
+    			if (FPaths::GetExtension(fileName).ToLower() != "db") //if the extension isn't .db
     			{
     				TArray<uint8> RawFileData;
                    // FString filePath = FPaths::Combine( *names, *fileName );
-                    FString filePath = FPaths::Combine(*FinalPath, *fileName);
+                    FString filePath = FPaths::Combine(*FinalPath, *fileName); //create the full path of the file
     				std::string strfileName(TCHAR_TO_ANSI(*filePath));
 
-    				if (FFileHelper::LoadFileToArray(RawFileData, *filePath))
+    				if (FFileHelper::LoadFileToArray(RawFileData, *filePath)) //put all the data in RawFileData
     				{
-    					IImageWrapperModule& ImageWrapperModule = FModuleManager::LoadModuleChecked<IImageWrapperModule>(FName("ImageWrapper"));
+    					IImageWrapperModule& ImageWrapperModule = FModuleManager::LoadModuleChecked<IImageWrapperModule>(FName("ImageWrapper")); 
     					// Note: PNG format.  Other formats are supported
     					IImageWrapperPtr ImageWrapper;
     					if (FPaths::GetExtension(fileName).ToLower() == "jpg" ||
