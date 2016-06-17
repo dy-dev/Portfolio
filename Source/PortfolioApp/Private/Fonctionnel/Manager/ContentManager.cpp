@@ -1,7 +1,7 @@
 #include "PortfolioApp.h"
 
 #include "ContentManager.h"
-#include "../../../Public/Fonctionnel/FileSort/FileSort.h"
+#include "FileSort.h"
 
 
 //#include "ImageLoader.h"

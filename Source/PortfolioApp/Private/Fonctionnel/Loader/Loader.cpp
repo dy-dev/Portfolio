@@ -34,7 +34,7 @@ void Loader::Load(FString p_sPath, UImagesHolder* p_pHolder)
 			FPaths::GetExtension(p_sPath).ToLower() == "png" ||
 			FPaths::GetExtension(p_sPath).ToLower() == "bmp")
 		{
-			ImageLoader(p_sPath, p_pHolder);
+			//ImageLoader(p_sPath, p_pHolder);
 		}
 
 		else if (FPaths::GetExtension(p_sPath).ToLower() == "mp4" ||
@@ -48,15 +48,11 @@ void Loader::Load(FString p_sPath, UImagesHolder* p_pHolder)
 	}
 }
 
-
-void Loader::ImageLoader(FString p_sPath, UImagesHolder* p_pHolder)
-{
-
-}
 						
-FString Loader::CreateSearchPaths(FString p_sPath)
+FString Loader::CreateSearchPaths(FString p_sPath, UImagesHolder* p_pHolder)
 {
-	ImagesPaths = p_sPath;
+	m_sImagesPaths = p_sPath;
+	FString fileName;
 	if (FPaths::DirectoryExists(p_sPath))//If the folder exists
 	{
 		IFileManager& FileManager = IFileManager::Get();
@@ -75,4 +71,5 @@ FString Loader::CreateSearchPaths(FString p_sPath)
 
 		}
 	}
+	return "";
 }

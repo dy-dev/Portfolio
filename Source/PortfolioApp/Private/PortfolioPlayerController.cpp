@@ -7,7 +7,7 @@
 #include "AnimLoader.h"
 #include "ImagesHolder.h"
 #include "ContentManager.h"
-#include "../../../Public/Fonctionnel/FileSort/FileSort.h"
+//#include "Fonctionnel/FileSort/FileSort.h"
 
 
 APortFolioPlayerController::APortFolioPlayerController( const class FObjectInitializer& ObjectInitializer )

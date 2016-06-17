@@ -1,9 +1,10 @@
 #pragma once
 
-#include "../../../Public/Fonctionnel/FileSort/FileSort.h"
+#include "FileSort.h"
 
 
 class ObjectManager;
+class FileSort;
 
 class ContentManager
 {

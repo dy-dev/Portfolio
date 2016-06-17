@@ -1,7 +1,7 @@
 #include "PortfolioApp.h"
 
-#include "../../../Public/Fonctionnel/FileSort/FileSort.h"
-
+#include "FileSort.h"
+//H:\Documents\S2\Stage\PortfolioApp\Source\PortfolioApp\Public\Fonctionnel\FileSort
 #include "PortfolioApp.h"
 #include "ImageLoader.h"
 #include "ImagesHolder.h"
@@ -20,6 +20,7 @@
 
 FileSort::FileSort()
 {
+	sortArray("H:/Documents/S2/Stage/PortfolioApp/Content/Images");
 }
 
 
@@ -46,7 +47,7 @@ bool FileSort::sortArray(FString p_sPath)
 	//m_mPathMap["sound"] = m_sSoundPathArray;
 	//m_mPathMap["3D"] = m_s3DPathArray;
 
-	for (auto fileName : Files) //For each file 
+	for (FString fileName : Files) //For each file 
 	{
 		if (FPaths::GetExtension(p_sPath).ToLower() == "jpg" ||
 			FPaths::GetExtension(p_sPath).ToLower() == "jpeg" ||

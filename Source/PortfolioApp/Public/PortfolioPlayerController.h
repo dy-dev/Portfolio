@@ -9,6 +9,8 @@
 class UImageLoader;
 class UAnimLoader;
 class UImagesHolder;
+class ContentManager;
+
 /**
  *
  */
