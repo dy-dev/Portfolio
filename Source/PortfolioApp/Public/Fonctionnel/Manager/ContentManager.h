@@ -5,6 +5,7 @@
 
 class ObjectManager;
 class FileSort;
+class DirectoryManager;
 
 class ContentManager
 {
@@ -16,5 +17,6 @@ public:
 
 private :
 	FileSort* m_pFileSort;
+	DirectoryManager* m_pDirectoryManager;
 };
 

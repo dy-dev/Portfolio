@@ -189,7 +189,7 @@
     <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
   </ImportGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Development_Editor|x64'">
-    <IncludePath>$(solutionDir)Source\PortfolioApp\Public\Fonctionnel\Manager;$(SolutionDir)Source\PortFolioApp\Public\Fonctionnel\Loader\;$(SolutionDir)Source\PortFolioApp\Public\Fonctionnel\FileSort\;$(IncludePath)</IncludePath>
+    <IncludePath>$(solutionDir)Source\PortfolioApp\Public\Fonctionnel\Manager;$(SolutionDir)Source\PortFolioApp\Public\Fonctionnel\Loader\;$(SolutionDir)Source\PortFolioApp\Public\Fonctionnel\FileSort\;$(SolutionDir)Source\PortFolioApp\Public\Fonctionnel\DirectoryManager\;$(IncludePath)</IncludePath>
     <ReferencePath />
     <LibraryPath />
     <LibraryWPath />
@@ -230,6 +230,7 @@
     <None Include="..\..\Source\PortfolioApp\PortfolioApp.Build.cs" />
     <ClCompile Include="..\..\Source\PortfolioApp\PortfolioApp.cpp" />
     <ClInclude Include="..\..\Source\PortfolioApp\PortfolioApp.h" />
+    <ClInclude Include="..\..\Source\PortfolioApp\Public\Fonctionnel\DirectoryManager\DirectoryManager.h" />
     <ClInclude Include="..\..\Source\PortfolioApp\Public\Fonctionnel\FileSort\FileSort.h" />
     <ClInclude Include="..\..\Source\PortfolioApp\Public\Fonctionnel\Loader\Loader.h" />
     <ClInclude Include="..\..\Source\PortfolioApp\Public\Fonctionnel\Manager\ContentManager.h" />
@@ -410,6 +411,7 @@
     <ClCompile Include="..\..\Source\PortfolioApp\Private\Fonctionnel\FileSort\FileSort.cpp" />
     <ClCompile Include="..\..\Source\PortfolioApp\Private\Fonctionnel\Loader\Loader.cpp" />
     <ClCompile Include="..\..\Source\PortfolioApp\Private\Fonctionnel\Manager\ContentManager.cpp" />
+    <ClCompile Include="..\..\Source\PortfolioApp\Private\Fonctionnel\Manager\DirectoryManager.cpp" />
     <ClCompile Include="..\..\Source\PortfolioApp\Private\History_ScrollBox.cpp" />
     <ClCompile Include="..\..\Source\PortfolioApp\Private\ImageLoader.cpp" />
     <ClCompile Include="..\..\Source\PortfolioApp\Private\ImagesHolder.cpp" />

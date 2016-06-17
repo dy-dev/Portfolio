@@ -2,6 +2,7 @@
 
 #include "ContentManager.h"
 #include "FileSort.h"
+#include "DirectoryManager.h"
 
 
 //#include "ImageLoader.h"
@@ -12,8 +13,8 @@
 
 ContentManager::ContentManager()
 {
+	m_pDirectoryManager = new DirectoryManager();
 	m_pFileSort = new FileSort();
-
 }
 
 
