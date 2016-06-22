@@ -33,7 +33,7 @@ void UCategory_Button::SetSubCategoryPath( FString p_sPath )
 void UCategory_Button::exploreSubCategory()
 {
     m_pScrollBox->ClearChildren();
-    m_pScrollBox->RootPath = subCategoryPath;
-    m_pScrollBox->FillButtons();
+    m_pScrollBox->CurrentPath = subCategoryPath;
+    m_pScrollBox->FillButtons(m_pController);
 }
 

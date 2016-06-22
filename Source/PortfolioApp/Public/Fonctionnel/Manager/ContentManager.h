@@ -14,6 +14,7 @@ public:
 	~ContentManager();
 
 	//void ContentManager::beginManageContent();
+	TArray<FString> GetSubDirectoriesFromContentManager();
 
 private :
 	FileSort* m_pFileSort;

@@ -15,6 +15,11 @@ ContentManager::ContentManager()
 {
 	m_pDirectoryManager = new DirectoryManager();
 	m_pFileSort = new FileSort();
+
+	if (m_pDirectoryManager->GetSubDirectories().Num() == 0)
+	{
+		m_pFileSort->sortArray(m_pDirectoryManager->GetCurrentPath() );
+	}
 }
 
 
@@ -25,6 +30,12 @@ ContentManager::~ContentManager()
 		delete m_pFileSort;
 	}
 }
+
+TArray<FString> ContentManager::GetSubDirectoriesFromContentManager() 
+{ 
+	return m_pDirectoryManager->GetSubDirectories(); 
+};
+
 
 
 

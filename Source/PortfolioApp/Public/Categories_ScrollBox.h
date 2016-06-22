@@ -5,7 +5,7 @@
 #include "Runtime/UMG/Public/Components/ScrollBox.h"
 #include "Categories_ScrollBox.generated.h"
 
-
+class APortFolioPlayerController;
 /**
  *
  */
@@ -15,12 +15,12 @@ class PORTFOLIOAPP_API UCategories_ScrollBox : public UScrollBox
     GENERATED_UCLASS_BODY()
 
 public:
-    UPROPERTY( EditDefaultsOnly, BlueprintReadOnly, Category = "Category Management" )
-        FString RootPath;
+	UPROPERTY(EditDefaultsOnly, BlueprintReadOnly, Category = "Category Management")
+		FString CurrentPath;
 
     /** Update thickness of Soft Edge Image! Yay! */
     UFUNCTION( BlueprintCallable, Category = "Category Management" )
-        void FillButtons();
+        void FillButtons(APortFolioPlayerController* p_pController);
 
     DECLARE_DYNAMIC_MULTICAST_DELEGATE( FBindableEvent_DisplayImages );
 

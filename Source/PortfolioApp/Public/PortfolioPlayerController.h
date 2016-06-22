@@ -10,6 +10,7 @@ class UImageLoader;
 class UAnimLoader;
 class UImagesHolder;
 class ContentManager;
+class DirectoryManager;
 
 /**
  *
@@ -17,26 +18,28 @@ class ContentManager;
 UCLASS()
 class PORTFOLIOAPP_API APortFolioPlayerController : public APlayerController
 {
-    GENERATED_BODY()
+	GENERATED_BODY()
 
 public:
-    APortFolioPlayerController( const class FObjectInitializer& ObjectInitializer );
+	APortFolioPlayerController(const class FObjectInitializer& ObjectInitializer);
 
-    UPROPERTY( EditAnywhere, BlueprintReadWrite, Category = "Portfolio Images" )
-        UImagesHolder* ImagesHolder;
-    
-    UPROPERTY( EditAnywhere, BlueprintReadWrite, Category = "Portfolio Images" )
-        UAnimLoader* AnimLoader;
-  
-    UFUNCTION( BlueprintCallable, Category = "Portfolio Images" )
-        void FillImageArray( const FString& FilePath );
+	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Portfolio Images")
+		UImagesHolder* ImagesHolder;
+
+	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Portfolio Images")
+		UAnimLoader* AnimLoader;
+
+	UFUNCTION(BlueprintCallable, Category = "Portfolio Images")
+		void FillImageArray(const FString& FilePath);
+
+	TArray<FString> GetSubDirectoriesFromController();
 
 protected:
-    /** @brief   Function call when the game start */
-    virtual void BeginPlay() override;
+	/** @brief   Function call when the game start */
+	virtual void BeginPlay() override;
 
 
 private:
-    //UImageLoader* m_pImageLoader;
+	//UImageLoader* m_pImageLoader;
 	ContentManager* m_pContentManager;
 };

@@ -12,6 +12,8 @@
 
 
 DirectoryManager::DirectoryManager()
+	: RootPath(FPaths::Combine(*FPaths::GameSavedDir(), TEXT("DiapoAssets")))
+	, m_sCurrentPath(RootPath)
 {
 
 }
@@ -20,6 +22,7 @@ DirectoryManager::DirectoryManager()
 DirectoryManager::~DirectoryManager()
 {
 }
+
 
 
 TArray<FString> DirectoryManager::GetSubDirectories()
@@ -35,25 +38,8 @@ TArray<FString> DirectoryManager::GetSubDirectories()
 			FPaths::NormalizeDirectoryName(RootPath);
 			FString FinalPath = RootPath;// +"/" + "*.*";
 			GetDirectories(FinalPath, DirNamesOut, false);
-			GetFiles(FinalPath, Files, false);
-		}
-		if ((Files.Num() == 1 && Files[0] == "Thumbs.db") ||
-			(Files.Num() == 0 && DirNamesOut.Num() > 0))
-		{
-			for (auto name : DirNamesOut)
-			{
-				FString fullPath = FPaths::Combine(*RootPath, *name);
-				std::string strdir(TCHAR_TO_ANSI(*fullPath));
-				FString cleanName = FPaths::GetBaseFilename(name);
-				std::string strname(TCHAR_TO_ANSI(*cleanName));
-				FString curPath = name.LeftChop(cleanName.Len() + 1);
-				std::string strpath(TCHAR_TO_ANSI(*curPath));
-			}
-		}
-		else
-		{
-			//FileSort::ListImagesToDisplay();
 		}
 	}
+
 	return DirNamesOut;
 }

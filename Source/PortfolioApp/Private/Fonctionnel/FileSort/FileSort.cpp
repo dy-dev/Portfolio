@@ -9,7 +9,7 @@
 #include "Runtime/ImageWrapper/Public/Interfaces/IImageWrapperModule.h"
 
 #include "DirectoryVisitor.h"
-
+#include "Media.h"
 #include <string>
 #include <vector> 
 #include <map> 
@@ -18,7 +18,7 @@
 
 FileSort::FileSort()
 {
-	sortArray("H:/Documents/S2/Stage/PortfolioApp/Saved/DiapoAssets/Image");
+
 }
 
 
@@ -29,48 +29,55 @@ FileSort::~FileSort()
 
 bool FileSort::sortArray(FString p_sPath)
 {
-	TArray<FString> Files;
-	
-	GetFiles(p_sPath, Files, false); //We put all the files in Files
 
-	//std::multimap<const string, vector<string>> m_mPathMap;
-	//vector<string> m_sPathVector;
+	GetFiles(p_sPath, m_asSortedFiles, false); //We put all the files in Files
 
-	std::multimap<const std::string, FString> m_mExtensionPathMap;
+	//std::multimap<const std::string, FString> m_mExtensionPathMap;
 
-	
+	//for (FString fileName : Files) //For each file 
+	//{
+	//	std::string strdir(TCHAR_TO_ANSI(*fileName));
+	//	if (FPaths::GetExtension(fileName).ToLower() == "jpg" ||
+	//		FPaths::GetExtension(fileName).ToLower() == "jpeg" ||
+	//		FPaths::GetExtension(fileName).ToLower() == "png" ||
+	//		FPaths::GetExtension(fileName).ToLower() == "bmp")
+	//	{
+	//		m_mExtensionPathMap.insert(std::pair<const std::string, FString>("picture", fileName));
 
-	for (FString fileName : Files) //For each file 
-	{
-		std::string strdir(TCHAR_TO_ANSI(*fileName));
-		if (FPaths::GetExtension(fileName).ToLower() == "jpg" ||
-			FPaths::GetExtension(fileName).ToLower() == "jpeg" ||
-			FPaths::GetExtension(fileName).ToLower() == "png" ||
-			FPaths::GetExtension(fileName).ToLower() == "bmp")
-		{
-			m_mExtensionPathMap.insert(std::pair<const std::string , FString>("picture", fileName));
-		}
+	//	}
 
-		else if (FPaths::GetExtension(fileName).ToLower() == "mp4" ||
-			FPaths::GetExtension(fileName).ToLower() == "mpeg4" ||
-			FPaths::GetExtension(fileName).ToLower() == "avi")
-		{
-			m_mExtensionPathMap.insert(std::pair<const std::string, FString>("anim", fileName));
-		}
+	//	else if (FPaths::GetExtension(fileName).ToLower() == "mp4" ||
+	//		FPaths::GetExtension(fileName).ToLower() == "mpeg4" ||
+	//		FPaths::GetExtension(fileName).ToLower() == "avi")
+	//	{
+	//		m_mExtensionPathMap.insert(std::pair<const std::string, FString>("anim", fileName));
+	//	}
 
-		else if (FPaths::GetExtension(fileName).ToLower() == "mp3" ||
-			FPaths::GetExtension(fileName).ToLower() == "wav")
-		{
-			m_mExtensionPathMap.insert(std::pair<const std::string, FString>("sound", fileName));
-		}
+	//	else if (FPaths::GetExtension(fileName).ToLower() == "mp3" ||
+	//		FPaths::GetExtension(fileName).ToLower() == "wav")
+	//	{
+	//		m_mExtensionPathMap.insert(std::pair<const std::string, FString>("sound", fileName));
+	//	}
 
-		else if (FPaths::GetExtension(fileName).ToLower() == "obj")
-		{
-			m_mExtensionPathMap.insert(std::pair<const std::string, FString>("3D", fileName));
-		}
-	}
+	//	else if (FPaths::GetExtension(fileName).ToLower() == "obj")
+	//	{
+	//		m_mExtensionPathMap.insert(std::pair<const std::string, FString>("3D", fileName));
+	//	}
+	//}
 
 	return true;
+}
+
+TArray<std::pair < FString, Media* > > FileSort::SortAssociateNameToMedia()
+{
+		
+	for (auto name : m_asSortedFiles)
+	{
+		Media* mediaObj = new Media();
+		m_vSortedAssociateNameToMedia.Add(std::pair < FString, Media* >(name, mediaObj));
+	}
+
+	return m_vSortedAssociateNameToMedia;
 }
 
 //void FileSort::ListImagesToDisplay()
