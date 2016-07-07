@@ -9,12 +9,12 @@ public:
 	FileSort();
 	~FileSort();
 
-	bool sortArray(FString p_sPath);
+	//bool sortArray(FString p_sPath);
 
-	TArray<std::pair < FString, Media* > > SortAssociateNameToMedia();
+	TArray<std::pair < FString, Media* >>& PrepareFiles(FString p_sPath);
 
 private :
-	TArray<std::pair < FString, Media* > > m_vSortedAssociateNameToMedia;
+	TArray<std::pair < FString, Media* >> m_vSortedAssociateNameToMedia;
 	TArray<FString> m_asSortedFiles;
 
 };

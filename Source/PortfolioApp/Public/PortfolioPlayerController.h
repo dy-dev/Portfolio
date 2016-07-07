@@ -11,6 +11,9 @@ class UAnimLoader;
 class UImagesHolder;
 class ContentManager;
 class DirectoryManager;
+class DisplayUIManager;
+class UCategory_Button;
+
 
 /**
  *
@@ -34,6 +37,9 @@ public:
 
 	TArray<FString> GetSubDirectoriesFromController();
 
+	void APortFolioPlayerController::CategoryButtonClicked(UCategory_Button* p_Button);
+
+
 protected:
 	/** @brief   Function call when the game start */
 	virtual void BeginPlay() override;
@@ -42,4 +48,5 @@ protected:
 private:
 	//UImageLoader* m_pImageLoader;
 	ContentManager* m_pContentManager;
+	DisplayUIManager* m_pDisplayUIManager;
 };

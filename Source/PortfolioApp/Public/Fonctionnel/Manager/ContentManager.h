@@ -16,8 +16,12 @@ public:
 	//void ContentManager::beginManageContent();
 	TArray<FString> GetSubDirectoriesFromContentManager();
 
+	TArray<std::pair < FString, Media* >>* ManageContent();
+
+
 private :
 	FileSort* m_pFileSort;
 	DirectoryManager* m_pDirectoryManager;
+
 };
 

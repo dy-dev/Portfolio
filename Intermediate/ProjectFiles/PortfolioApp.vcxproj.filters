@@ -694,6 +694,11 @@
     <ClInclude Include="..\..\Source\PortfolioApp\Public\Fonctionnel\DirectoryManager\DirectoryManager.h" />
     <ClInclude Include="..\..\Source\PortfolioApp\Public\Fonctionnel\Manager\MediaManager.h" />
     <ClInclude Include="..\..\Source\PortfolioApp\Public\Fonctionnel\Media\Media.h" />
+    <ClInclude Include="..\..\Source\PortfolioApp\Public\IHM\Manager\DisplayUIManager.h" />
+    <ClInclude Include="..\..\Source\PortfolioApp\Public\Fonctionnel\Media\Picture.h" />
+    <ClInclude Include="..\..\Source\PortfolioApp\Public\Fonctionnel\Media\Anim.h" />
+    <ClInclude Include="..\..\Source\PortfolioApp\Public\Fonctionnel\Media\Sound.h" />
+    <ClInclude Include="..\..\Source\PortfolioApp\Public\Fonctionnel\Media\Object3D.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="..\..\Source\PortfolioApp\Private\Fonctionnel\Loader\Loader.cpp" />
@@ -702,5 +707,10 @@
     <ClCompile Include="..\..\Source\PortfolioApp\Private\Fonctionnel\Manager\DirectoryManager.cpp" />
     <ClCompile Include="..\..\Source\PortfolioApp\Private\Fonctionnel\Manager\MediaManager.cpp" />
     <ClCompile Include="..\..\Source\PortfolioApp\Private\Fonctionnel\Media\Media.cpp" />
+    <ClCompile Include="..\..\Source\PortfolioApp\Private\IHM\Manager\DisplayUIManager.cpp" />
+    <ClCompile Include="..\..\Source\PortfolioApp\Private\Fonctionnel\Media\Picture.cpp" />
+    <ClCompile Include="..\..\Source\PortfolioApp\Private\Fonctionnel\Media\Anim.cpp" />
+    <ClCompile Include="..\..\Source\PortfolioApp\Private\Fonctionnel\Media\Sound.cpp" />
+    <ClCompile Include="..\..\Source\PortfolioApp\Private\Fonctionnel\Media\Object3D.cpp" />
   </ItemGroup>
 </Project>

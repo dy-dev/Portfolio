@@ -27,10 +27,9 @@ FileSort::~FileSort()
 }
 
 
-bool FileSort::sortArray(FString p_sPath)
-{
+//bool FileSort::sortArray(FString p_sPath)
+//{
 
-	GetFiles(p_sPath, m_asSortedFiles, false); //We put all the files in Files
 
 	//std::multimap<const std::string, FString> m_mExtensionPathMap;
 
@@ -65,12 +64,13 @@ bool FileSort::sortArray(FString p_sPath)
 	//	}
 	//}
 
-	return true;
-}
+	//return true;
+//}
 
-TArray<std::pair < FString, Media* > > FileSort::SortAssociateNameToMedia()
+TArray<std::pair < FString, Media* >>& FileSort::PrepareFiles(FString p_sPath)
 {
-		
+	GetFiles(p_sPath, m_asSortedFiles, false); //We put all the files in Files
+
 	for (auto name : m_asSortedFiles)
 	{
 		Media* mediaObj = new Media();

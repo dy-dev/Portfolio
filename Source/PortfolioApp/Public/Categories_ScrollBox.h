@@ -12,7 +12,7 @@ class APortFolioPlayerController;
 UCLASS()
 class PORTFOLIOAPP_API UCategories_ScrollBox : public UScrollBox
 {
-    GENERATED_UCLASS_BODY()
+GENERATED_UCLASS_BODY()
 
 public:
 	UPROPERTY(EditDefaultsOnly, BlueprintReadOnly, Category = "Category Management")

@@ -24,6 +24,7 @@ public :
     UFUNCTION( BlueprintCallable, Category = "Category Management" )
         void exploreSubCategory();
 
+
 protected:
     // UWidget interface
     virtual TSharedRef<SWidget> RebuildWidget() override;

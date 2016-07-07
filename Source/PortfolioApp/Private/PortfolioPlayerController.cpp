@@ -7,7 +7,10 @@
 #include "AnimLoader.h"
 #include "ImagesHolder.h"
 #include "ContentManager.h"
-//#include "Fonctionnel/FileSort/FileSort.h"
+#include "DisplayUIManager.h"
+#include "Categories_ScrollBox.h"
+#include "Category_Button.h"
+
 
 
 APortFolioPlayerController::APortFolioPlayerController(const class FObjectInitializer& ObjectInitializer)
@@ -27,6 +30,7 @@ void APortFolioPlayerController::BeginPlay()
 	AnimLoader = NewObject<UAnimLoader>(UImagesHolder::StaticClass());
 	ImagesHolder = NewObject<UImagesHolder>(UImagesHolder::StaticClass());
 	m_pContentManager = new ContentManager();
+	m_pDisplayUIManager = new DisplayUIManager();
 
 
 }
@@ -37,8 +41,21 @@ TArray<FString> APortFolioPlayerController::GetSubDirectoriesFromController()
 }
 
 
+void APortFolioPlayerController::CategoryButtonClicked(UCategory_Button* p_Button)
+{
+	if (m_pContentManager->ManageContent() != nullptr)
+	{
+		//m_pScrollBox->FillButtons(p_pController);
+	}
+	else
+	{
+		//displayFrame
+	}
+}
+
 void APortFolioPlayerController::FillImageArray(const FString& FilePath)
 {
 	//m_pImageLoader->CreateSearchPaths( FilePath, ImagesHolder );
 	//m_pFileSort->fillArray( FilePath, m_aObjectManager );
 }
+

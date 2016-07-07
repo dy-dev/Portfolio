@@ -7,6 +7,10 @@
 
 Media::Media()
 {
+	/*
+	m_sFullPath = p_sFullPath;
+	m_sExtension = p_sExtension; 
+	*/
 }
 
 

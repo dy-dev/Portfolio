@@ -189,7 +189,7 @@
     <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
   </ImportGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Development_Editor|x64'">
-    <IncludePath>$(solutionDir)Source\PortfolioApp\Public\Fonctionnel\Manager;$(SolutionDir)Source\PortFolioApp\Public\Fonctionnel\Loader\;$(SolutionDir)Source\PortFolioApp\Public\Fonctionnel\FileSort\;$(SolutionDir)Source\PortFolioApp\Public\Fonctionnel\DirectoryManager\;$(SolutionDir)Source\PortFolioApp\Public\Fonctionnel\Media\;$(IncludePath)</IncludePath>
+    <IncludePath>$(solutionDir)Source\PortfolioApp\Public\Fonctionnel\Manager;$(SolutionDir)Source\PortFolioApp\Public\Fonctionnel\Loader\;$(SolutionDir)Source\PortFolioApp\Public\Fonctionnel\FileSort\;$(SolutionDir)Source\PortFolioApp\Public\Fonctionnel\DirectoryManager\;$(SolutionDir)Source\PortFolioApp\Public\Fonctionnel\Media\;$(SolutionDir)Source\PortFolioApp\Public\IHM\Manager\;$(IncludePath)</IncludePath>
     <ReferencePath />
     <LibraryPath />
     <LibraryWPath />
@@ -235,7 +235,12 @@
     <ClInclude Include="..\..\Source\PortfolioApp\Public\Fonctionnel\Loader\Loader.h" />
     <ClInclude Include="..\..\Source\PortfolioApp\Public\Fonctionnel\Manager\ContentManager.h" />
     <ClInclude Include="..\..\Source\PortfolioApp\Public\Fonctionnel\Manager\MediaManager.h" />
+    <ClInclude Include="..\..\Source\PortfolioApp\Public\Fonctionnel\Media\Anim.h" />
     <ClInclude Include="..\..\Source\PortfolioApp\Public\Fonctionnel\Media\Media.h" />
+    <ClInclude Include="..\..\Source\PortfolioApp\Public\Fonctionnel\Media\Object3D.h" />
+    <ClInclude Include="..\..\Source\PortfolioApp\Public\Fonctionnel\Media\Picture.h" />
+    <ClInclude Include="..\..\Source\PortfolioApp\Public\Fonctionnel\Media\Sound.h" />
+    <ClInclude Include="..\..\Source\PortfolioApp\Public\IHM\Manager\DisplayUIManager.h" />
     <ClInclude Include="..\..\Source\PortfolioApp\revision.h" />
     <ClInclude Include="..\..\Source\PortfolioApp\assimp\ai_assert.h" />
     <ClInclude Include="..\..\Source\PortfolioApp\assimp\anim.h" />
@@ -415,8 +420,13 @@
     <ClCompile Include="..\..\Source\PortfolioApp\Private\Fonctionnel\Manager\ContentManager.cpp" />
     <ClCompile Include="..\..\Source\PortfolioApp\Private\Fonctionnel\Manager\DirectoryManager.cpp" />
     <ClCompile Include="..\..\Source\PortfolioApp\Private\Fonctionnel\Manager\MediaManager.cpp" />
+    <ClCompile Include="..\..\Source\PortfolioApp\Private\Fonctionnel\Media\Anim.cpp" />
     <ClCompile Include="..\..\Source\PortfolioApp\Private\Fonctionnel\Media\Media.cpp" />
+    <ClCompile Include="..\..\Source\PortfolioApp\Private\Fonctionnel\Media\Object3D.cpp" />
+    <ClCompile Include="..\..\Source\PortfolioApp\Private\Fonctionnel\Media\Picture.cpp" />
+    <ClCompile Include="..\..\Source\PortfolioApp\Private\Fonctionnel\Media\Sound.cpp" />
     <ClCompile Include="..\..\Source\PortfolioApp\Private\History_ScrollBox.cpp" />
+    <ClCompile Include="..\..\Source\PortfolioApp\Private\IHM\Manager\DisplayUIManager.cpp" />
     <ClCompile Include="..\..\Source\PortfolioApp\Private\ImageLoader.cpp" />
     <ClCompile Include="..\..\Source\PortfolioApp\Private\ImagesHolder.cpp" />
     <ClCompile Include="..\..\Source\PortfolioApp\Private\PortfolioPlayerController.cpp" />

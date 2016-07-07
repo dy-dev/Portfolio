@@ -3,6 +3,8 @@
 #include "ContentManager.h"
 #include "FileSort.h"
 #include "DirectoryManager.h"
+#include "DisplayUIManager.h"
+
 
 
 //#include "ImageLoader.h"
@@ -15,11 +17,6 @@ ContentManager::ContentManager()
 {
 	m_pDirectoryManager = new DirectoryManager();
 	m_pFileSort = new FileSort();
-
-	if (m_pDirectoryManager->GetSubDirectories().Num() == 0)
-	{
-		m_pFileSort->sortArray(m_pDirectoryManager->GetCurrentPath() );
-	}
 }
 
 
@@ -31,9 +28,18 @@ ContentManager::~ContentManager()
 	}
 }
 
-TArray<FString> ContentManager::GetSubDirectoriesFromContentManager() 
-{ 
-	return m_pDirectoryManager->GetSubDirectories(); 
+TArray<std::pair < FString, Media* >>* ContentManager::ManageContent()
+{
+	if (m_pDirectoryManager->GetSubDirectories().Num() == 0)
+	{
+		return &(m_pFileSort->PrepareFiles(m_pDirectoryManager->GetCurrentPath()));
+	}
+	return nullptr;
+}
+
+TArray<FString> ContentManager::GetSubDirectoriesFromContentManager()
+{
+	return m_pDirectoryManager->GetSubDirectories();
 };
 
 
