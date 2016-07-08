@@ -699,6 +699,7 @@
     <ClInclude Include="..\..\Source\PortfolioApp\Public\Fonctionnel\Media\Anim.h" />
     <ClInclude Include="..\..\Source\PortfolioApp\Public\Fonctionnel\Media\Sound.h" />
     <ClInclude Include="..\..\Source\PortfolioApp\Public\Fonctionnel\Media\Object3D.h" />
+    <ClInclude Include="..\..\Source\PortfolioApp\Public\Fonctionnel\Media\MediaFactory.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="..\..\Source\PortfolioApp\Private\Fonctionnel\Loader\Loader.cpp" />
@@ -712,5 +713,6 @@
     <ClCompile Include="..\..\Source\PortfolioApp\Private\Fonctionnel\Media\Anim.cpp" />
     <ClCompile Include="..\..\Source\PortfolioApp\Private\Fonctionnel\Media\Sound.cpp" />
     <ClCompile Include="..\..\Source\PortfolioApp\Private\Fonctionnel\Media\Object3D.cpp" />
+    <ClCompile Include="..\..\Source\PortfolioApp\Private\Fonctionnel\Media\MediaFactory.cpp" />
   </ItemGroup>
 </Project>

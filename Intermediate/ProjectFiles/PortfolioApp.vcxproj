@@ -237,6 +237,7 @@
     <ClInclude Include="..\..\Source\PortfolioApp\Public\Fonctionnel\Manager\MediaManager.h" />
     <ClInclude Include="..\..\Source\PortfolioApp\Public\Fonctionnel\Media\Anim.h" />
     <ClInclude Include="..\..\Source\PortfolioApp\Public\Fonctionnel\Media\Media.h" />
+    <ClInclude Include="..\..\Source\PortfolioApp\Public\Fonctionnel\Media\MediaFactory.h" />
     <ClInclude Include="..\..\Source\PortfolioApp\Public\Fonctionnel\Media\Object3D.h" />
     <ClInclude Include="..\..\Source\PortfolioApp\Public\Fonctionnel\Media\Picture.h" />
     <ClInclude Include="..\..\Source\PortfolioApp\Public\Fonctionnel\Media\Sound.h" />
@@ -422,6 +423,7 @@
     <ClCompile Include="..\..\Source\PortfolioApp\Private\Fonctionnel\Manager\MediaManager.cpp" />
     <ClCompile Include="..\..\Source\PortfolioApp\Private\Fonctionnel\Media\Anim.cpp" />
     <ClCompile Include="..\..\Source\PortfolioApp\Private\Fonctionnel\Media\Media.cpp" />
+    <ClCompile Include="..\..\Source\PortfolioApp\Private\Fonctionnel\Media\MediaFactory.cpp" />
     <ClCompile Include="..\..\Source\PortfolioApp\Private\Fonctionnel\Media\Object3D.cpp" />
     <ClCompile Include="..\..\Source\PortfolioApp\Private\Fonctionnel\Media\Picture.cpp" />
     <ClCompile Include="..\..\Source\PortfolioApp\Private\Fonctionnel\Media\Sound.cpp" />
