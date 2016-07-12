@@ -5,10 +5,10 @@
 
 
 
-Anim::Anim(FString p_sExtension)
+Anim::Anim(uint8 p_iExtension)
 {
 	m_sType = "Anim";
-	m_sExtension = p_sExtension;
+	m_iExtension = p_iExtension;
 }
 
 

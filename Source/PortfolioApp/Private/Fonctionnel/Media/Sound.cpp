@@ -5,10 +5,10 @@
 
 
 
-Sound::Sound(FString p_sExtension)
+Sound::Sound(uint8 p_iExtension)
 {
 	m_sType = "Sound";
-	m_sExtension = p_sExtension;
+	m_iExtension = p_iExtension;
 }
 
 

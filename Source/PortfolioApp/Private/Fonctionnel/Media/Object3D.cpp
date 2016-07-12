@@ -5,10 +5,10 @@
 
 
 
-Object3D::Object3D(FString p_sExtension)
+Object3D::Object3D(uint8 p_iExtension)
 {
 	m_sType = "Object3D";
-	m_sExtension = p_sExtension;
+	m_iExtension = p_iExtension;
 }
 
 

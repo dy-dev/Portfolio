@@ -236,6 +236,7 @@
     <ClInclude Include="..\..\Source\PortfolioApp\Public\Fonctionnel\Manager\ContentManager.h" />
     <ClInclude Include="..\..\Source\PortfolioApp\Public\Fonctionnel\Manager\MediaManager.h" />
     <ClInclude Include="..\..\Source\PortfolioApp\Public\Fonctionnel\Media\Anim.h" />
+    <ClInclude Include="..\..\Source\PortfolioApp\Public\Fonctionnel\Media\Enums.h" />
     <ClInclude Include="..\..\Source\PortfolioApp\Public\Fonctionnel\Media\Media.h" />
     <ClInclude Include="..\..\Source\PortfolioApp\Public\Fonctionnel\Media\MediaFactory.h" />
     <ClInclude Include="..\..\Source\PortfolioApp\Public\Fonctionnel\Media\Object3D.h" />

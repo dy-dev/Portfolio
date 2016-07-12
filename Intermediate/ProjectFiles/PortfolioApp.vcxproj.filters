@@ -700,6 +700,7 @@
     <ClInclude Include="..\..\Source\PortfolioApp\Public\Fonctionnel\Media\Sound.h" />
     <ClInclude Include="..\..\Source\PortfolioApp\Public\Fonctionnel\Media\Object3D.h" />
     <ClInclude Include="..\..\Source\PortfolioApp\Public\Fonctionnel\Media\MediaFactory.h" />
+    <ClInclude Include="..\..\Source\PortfolioApp\Public\Fonctionnel\Media\Enums.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="..\..\Source\PortfolioApp\Private\Fonctionnel\Loader\Loader.cpp" />
