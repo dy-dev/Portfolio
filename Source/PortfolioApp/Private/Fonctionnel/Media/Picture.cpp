@@ -4,9 +4,11 @@
 
 
 
-Picture::Picture()
+Picture::Picture(FString p_sExtension)
 {
 	m_sType = "Picture";
+	m_sExtension = p_sExtension;
+	//FillData();
 }
 
 

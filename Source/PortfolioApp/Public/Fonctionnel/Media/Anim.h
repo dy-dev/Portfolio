@@ -5,7 +5,7 @@
 class Anim : public Media
 {
 public:
-	Anim();
+	Anim(FString p_sExtension);
 	~Anim();
 };
 

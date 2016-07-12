@@ -5,7 +5,7 @@
 class Object3D : public Media
 {
 public:
-	Object3D();
+	Object3D(FString p_sExtension);
 	~Object3D();
 };
 

@@ -5,9 +5,10 @@
 
 
 
-Anim::Anim()
+Anim::Anim(FString p_sExtension)
 {
 	m_sType = "Anim";
+	m_sExtension = p_sExtension;
 }
 
 

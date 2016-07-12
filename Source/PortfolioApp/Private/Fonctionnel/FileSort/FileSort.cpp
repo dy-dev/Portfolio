@@ -10,6 +10,7 @@
 
 #include "DirectoryVisitor.h"
 #include "Media.h"
+#include "MediaFactory.h"
 #include <string>
 #include <vector> 
 #include <map> 
@@ -67,13 +68,14 @@ FileSort::~FileSort()
 	//return true;
 //}
 
+
 TArray<std::pair < FString, Media* >>& FileSort::PrepareFiles(FString p_sPath)
 {
 	GetFiles(p_sPath, m_asSortedFiles, false); //We put all the files in Files
-
+	MediaFactory* factory = MediaFactory::getInstance();
 	for (auto name : m_asSortedFiles)
 	{
-		Media* mediaObj = new Media();
+		Media* mediaObj = factory->createMedia(name);
 		m_vSortedAssociateNameToMedia.Add(std::pair < FString, Media* >(name, mediaObj));
 	}
 

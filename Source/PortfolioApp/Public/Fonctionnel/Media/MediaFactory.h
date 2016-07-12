@@ -17,11 +17,15 @@ enum class EMedia : uint8
 class MediaFactory
 {
 public:
-	MediaFactory();
-	~MediaFactory();
+	static MediaFactory* getInstance();
 
 	Media* createMedia(FString p_sPath);
 	EMedia returnType(FString p_sPath);
 
+private :
+	MediaFactory();
+	~MediaFactory();
+
+	static MediaFactory* uniqueInstance;
 };
 

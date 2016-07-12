@@ -5,7 +5,7 @@
 class Picture : public Media
 {
 public:
-	Picture();
+	Picture(FString p_sExtension);
 	~Picture();
 };
 

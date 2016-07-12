@@ -5,7 +5,7 @@
 class Sound : public Media
 {
 public:
-	Sound();
+	Sound(FString p_sExtension);
 	~Sound();
 };
 

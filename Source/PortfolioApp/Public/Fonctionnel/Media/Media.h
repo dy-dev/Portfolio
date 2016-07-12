@@ -14,6 +14,6 @@ protected:
 	std::string m_sArtist;
 	std::string m_sReleaseDate;
 	std::string m_sType;
-	std::string m_sExtension;
+	FString m_sExtension;
 };
 

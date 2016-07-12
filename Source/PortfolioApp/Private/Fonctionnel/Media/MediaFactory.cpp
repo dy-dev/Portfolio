@@ -9,6 +9,7 @@
 #include <iostream>
 
 
+MediaFactory* MediaFactory::uniqueInstance = nullptr;
 
 MediaFactory::MediaFactory()
 {
@@ -20,53 +21,63 @@ MediaFactory::~MediaFactory()
 }
 
 
+MediaFactory* MediaFactory::getInstance()
+{
+	if (nullptr == uniqueInstance )
+	{
+		uniqueInstance = new MediaFactory();
+	}
+		return uniqueInstance;
+}
+
 Media* MediaFactory::createMedia(FString p_sPath)
 {
 
 	Media* media = nullptr;
-	uint8 iType = (uint8) MediaFactory::returnType(p_sPath);
+	FString sExtension = FPaths::GetExtension(p_sPath).ToLower();
+	uint8 iType = (uint8) MediaFactory::returnType(sExtension);
 	switch (iType)
 	{
 	case (uint8) EMedia::EPicture :
-		media = new Picture();
+		media = new Picture(sExtension);
 		break;
 	case (uint8) EMedia::EAnim :
-		media = new Anim();
+		media = new Anim(sExtension);
 		break;
 	case (uint8)EMedia::ESound:
-		media = new Sound();
+		media = new Sound(sExtension);
 		break;
 	case (uint8) EMedia::EObject3D:
-		media = new Object3D();
+		media = new Object3D(sExtension);
 		break;
 	}
 	return media;
 }
 
-EMedia MediaFactory::returnType(FString p_sPath)
+EMedia MediaFactory::returnType(FString p_sExtension)
 {
-	if (FPaths::GetExtension(p_sPath).ToLower() == "jpg" ||
-		FPaths::GetExtension(p_sPath).ToLower() == "jpeg" ||
-		FPaths::GetExtension(p_sPath).ToLower() == "png" ||
-		FPaths::GetExtension(p_sPath).ToLower() == "bmp")
+	if (p_sExtension == "jpg" ||
+		p_sExtension == "jpeg" ||
+		p_sExtension == "png" ||
+		p_sExtension == "bmp")
 	{
 		return EMedia::EPicture;
 	}
-	else if (FPaths::GetExtension(p_sPath).ToLower() == "avi" ||
-			FPaths::GetExtension(p_sPath).ToLower() == "mpg4" ||
-			FPaths::GetExtension(p_sPath).ToLower() == "mpeg4" ||
-			FPaths::GetExtension(p_sPath).ToLower() == "wmv")
+	else if (p_sExtension == "avi" ||
+			p_sExtension == "mpg4" ||
+			p_sExtension == "mpeg4" ||
+			p_sExtension == "wmv")
 	{
 		return EMedia::EAnim;
 	}
-	else if (FPaths::GetExtension(p_sPath).ToLower() == "mp3" ||
-			FPaths::GetExtension(p_sPath).ToLower() == "wav" )
+	else if (p_sExtension == "mp3" ||
+		p_sExtension == "wav" )
 	{
 		return EMedia::ESound;
 	}
-	else if (FPaths::GetExtension(p_sPath).ToLower() == "obj" ||
-			FPaths::GetExtension(p_sPath).ToLower() == "fbx" ||
-			FPaths::GetExtension(p_sPath).ToLower() == "3ds")
+	else if (p_sExtension == "obj" ||
+		p_sExtension == "fbx" ||
+		p_sExtension == "3ds")
 	{
 		return EMedia::EObject3D;
 	}

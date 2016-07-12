@@ -189,7 +189,7 @@
     <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
   </ImportGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Development_Editor|x64'">
-    <IncludePath>$(solutionDir)Source\PortfolioApp\Public\Fonctionnel\Manager;$(SolutionDir)Source\PortFolioApp\Public\Fonctionnel\Loader\;$(SolutionDir)Source\PortFolioApp\Public\Fonctionnel\FileSort\;$(SolutionDir)Source\PortFolioApp\Public\Fonctionnel\DirectoryManager\;$(SolutionDir)Source\PortFolioApp\Public\Fonctionnel\Media\;$(SolutionDir)Source\PortFolioApp\Public\IHM\Manager\;$(IncludePath)</IncludePath>
+    <IncludePath>$(solutionDir)Source\PortfolioApp\Public\Fonctionnel\Manager;$(SolutionDir)Source\PortFolioApp\Public\Fonctionnel\Loader\;$(SolutionDir)Source\PortFolioApp\Public\Fonctionnel\FileSort\;$(SolutionDir)Source\PortFolioApp\Public\Fonctionnel\DirectoryManager\;$(SolutionDir)Source\PortFolioApp\Public\Fonctionnel\Media\;$(SolutionDir)Source\PortFolioApp\Public\IHM\Manager\;$(SolutionDir)Source\PortFolioApp\Public\Fonctionnel\Design Patterns\;$(IncludePath)</IncludePath>
     <ReferencePath />
     <LibraryPath />
     <LibraryWPath />
