@@ -13,9 +13,8 @@ public:
 	ContentManager();
 	~ContentManager();
 
-	//void ContentManager::beginManageContent();
 	TArray<FString> GetSubDirectoriesFromContentManager();
-
+	void SetCurrentPathFromContentManager(FString p_sPath);
 	TArray<std::pair < FString, Media* >>* ManageContent();
 
 

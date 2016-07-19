@@ -20,7 +20,7 @@ public:
 
     /** Update thickness of Soft Edge Image! Yay! */
     UFUNCTION( BlueprintCallable, Category = "Category Management" )
-        void FillButtons(APortFolioPlayerController* p_pController);
+        void FillCatButtons(APortFolioPlayerController* p_pController);
 
     DECLARE_DYNAMIC_MULTICAST_DELEGATE( FBindableEvent_DisplayImages );
 
@@ -28,7 +28,10 @@ public:
     UPROPERTY( BlueprintAssignable, BlueprintCallable, Category = "Category Management" )
         FBindableEvent_DisplayImages DisplayImages;
 
+	void SetCurrentPath(FString p_sCurrentName);
+	FString GetCurrentPath();
 
+	
     UPROPERTY( EditAnywhere, BlueprintReadWrite, Category = "Category Management" )
         FButtonStyle ButtonStyle;
 
@@ -38,6 +41,7 @@ protected:
     // End of UWidget interface
 
     void ListImagesToDisplay();
+	FString m_sChildName;
     TMap< UButton*, FString> m_tmButtonToDir;
     TArray<UTexture2D*> m_aTextures;
 

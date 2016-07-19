@@ -2,7 +2,7 @@
 
 #include "Media.h"
 
-#include "Runtime/ImageWrapper/Public/Interfaces/IImageWrapper.h"
+#include "LoaderPicture.h"
 
 
 class Picture : public Media
@@ -12,9 +12,11 @@ public:
 	~Picture();
 
 	void FillData();
+	FString GetFullPath();
+
 
 private :
-	IImageWrapperPtr m_ImageWrapper; // A METTRE DS LE LOADER
-
+	LoaderPicture* m_LoaderPicture;
+	UTexture2D* m_TexturePicture;
 };
 

@@ -17,10 +17,11 @@ class PORTFOLIOAPP_API UCategory_Button : public UButton
 
 public : 
     void SetScrollBox( UCategories_ScrollBox* p_pScrollBox );
+	UCategories_ScrollBox* GetScrollBox();
     void SetSubCategoryPath( FString p_sPath );
-
+	FString GetSubCategoryPath();
 	void SetController(APortFolioPlayerController* p_pController) { m_pController = p_pController; };
-  
+
     UFUNCTION( BlueprintCallable, Category = "Category Management" )
         void exploreSubCategory();
 

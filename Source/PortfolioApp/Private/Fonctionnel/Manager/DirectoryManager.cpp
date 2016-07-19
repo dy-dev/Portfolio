@@ -24,19 +24,23 @@ DirectoryManager::~DirectoryManager()
 }
 
 
+void DirectoryManager::SetCurrentPath(FString p_sPath)
+{
+	m_sCurrentPath = p_sPath;
+}
+
+
 
 TArray<FString> DirectoryManager::GetSubDirectories()
 {
 	TArray<FString> DirNamesOut;
-	if (FPaths::DirectoryExists(RootPath))
+	if (FPaths::DirectoryExists(m_sCurrentPath))
 	{
-		//IFileManager& FileManager = IFileManager::Get();
-		
 		TArray<FString> Files;
-		if (RootPath.Len() > 1)
+		if (m_sCurrentPath.Len() > 1)
 		{
-			FPaths::NormalizeDirectoryName(RootPath);
-			FString FinalPath = RootPath;// +"/" + "*.*";
+			FPaths::NormalizeDirectoryName(m_sCurrentPath);
+			FString FinalPath = m_sCurrentPath;
 			GetDirectories(FinalPath, DirNamesOut, false);
 		}
 	}

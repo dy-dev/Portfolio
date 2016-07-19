@@ -26,13 +26,18 @@ TSharedRef<SWidget> UCategories_ScrollBox::RebuildWidget()
 	return OurWidget;
 }
 
-
-
-void UCategories_ScrollBox::FillButtons(APortFolioPlayerController* p_pController)
+void UCategories_ScrollBox::SetCurrentPath(FString p_sCurrentName)
 {
-	/*if ( (Files.Num() == 1 && Files[0] == "Thumbs.db" )||
-		 ( Files.Num() == 0 && DirNamesOut.Num() > 0 ) )
-	{*/
+	CurrentPath = p_sCurrentName;
+}
+
+FString UCategories_ScrollBox::GetCurrentPath()
+{
+	return CurrentPath;
+}
+
+void UCategories_ScrollBox::FillCatButtons(APortFolioPlayerController* p_pController)
+{
 	assert(p_pController != nullptr);
 	TArray<FString> m_sSubDirectories = p_pController->GetSubDirectoriesFromController();
 
@@ -50,7 +55,6 @@ void UCategories_ScrollBox::FillButtons(APortFolioPlayerController* p_pControlle
 		subCategoryButton->SetController(p_pController);
 		subCategoryButton->SetSubCategoryPath(fullPath);
 		this->AddChild(subCategoryButton);
-
 		m_tmButtonToDir.Add(subCategoryButton, name);
 
 		subCategoryButton->OnClicked.AddDynamic(subCategoryButton, &UCategory_Button::exploreSubCategory);

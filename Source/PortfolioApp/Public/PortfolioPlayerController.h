@@ -13,6 +13,7 @@ class ContentManager;
 class DirectoryManager;
 class DisplayUIManager;
 class UCategory_Button;
+class UCategories_ScrollBox;
 
 
 /**
@@ -35,9 +36,12 @@ public:
 	UFUNCTION(BlueprintCallable, Category = "Portfolio Images")
 		void FillImageArray(const FString& FilePath);
 
+	UFUNCTION(BlueprintCallable, Category = "Portfolio")
+		void RegisterCategoryScrollBox(UCategories_ScrollBox* p_pCatSB);
+
 	TArray<FString> GetSubDirectoriesFromController();
 
-	void APortFolioPlayerController::CategoryButtonClicked(UCategory_Button* p_Button);
+	void CategoryButtonClicked(UCategory_Button* p_Button);
 
 
 protected:

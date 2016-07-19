@@ -29,20 +29,27 @@ void UCategory_Button::SetScrollBox( UCategories_ScrollBox* p_pScrollBox )
     m_pScrollBox = p_pScrollBox;
 }
 
+
+
+UCategories_ScrollBox* UCategory_Button::GetScrollBox()
+{
+	return m_pScrollBox;
+}
+
 void UCategory_Button::SetSubCategoryPath( FString p_sPath )
 {
     subCategoryPath = p_sPath;
 }
 
+FString UCategory_Button::GetSubCategoryPath()
+{
+	return subCategoryPath;
+}
+
 void UCategory_Button::exploreSubCategory()
 {
-    //m_pScrollBox->ClearChildren();
-    //m_pScrollBox->CurrentPath = subCategoryPath;
-	
+    m_pScrollBox->SetCurrentPath(subCategoryPath);
 	assert(m_pController != nullptr);
-
 	m_pController->CategoryButtonClicked(this);
-
-    //m_pScrollBox->FillButtons(m_pController);
 }
 

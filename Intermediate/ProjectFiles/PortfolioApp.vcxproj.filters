@@ -688,7 +688,6 @@
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="..\..\Source\PortfolioApp\Public\Fonctionnel\Loader\Loader.h" />
     <ClInclude Include="..\..\Source\PortfolioApp\Public\Fonctionnel\Manager\ContentManager.h" />
     <ClInclude Include="..\..\Source\PortfolioApp\Public\Fonctionnel\FileSort\FileSort.h" />
     <ClInclude Include="..\..\Source\PortfolioApp\Public\Fonctionnel\DirectoryManager\DirectoryManager.h" />
@@ -701,9 +700,10 @@
     <ClInclude Include="..\..\Source\PortfolioApp\Public\Fonctionnel\Media\Object3D.h" />
     <ClInclude Include="..\..\Source\PortfolioApp\Public\Fonctionnel\Media\MediaFactory.h" />
     <ClInclude Include="..\..\Source\PortfolioApp\Public\Fonctionnel\Media\Enums.h" />
+    <ClInclude Include="..\..\Source\PortfolioApp\Public\Fonctionnel\Loader\LoaderPicture.h" />
+    <ClInclude Include="..\..\Source\PortfolioApp\Public\IHM\Display\DisplayFrame.h" />
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="..\..\Source\PortfolioApp\Private\Fonctionnel\Loader\Loader.cpp" />
     <ClCompile Include="..\..\Source\PortfolioApp\Private\Fonctionnel\Manager\ContentManager.cpp" />
     <ClCompile Include="..\..\Source\PortfolioApp\Private\Fonctionnel\FileSort\FileSort.cpp" />
     <ClCompile Include="..\..\Source\PortfolioApp\Private\Fonctionnel\Manager\DirectoryManager.cpp" />
@@ -715,5 +715,7 @@
     <ClCompile Include="..\..\Source\PortfolioApp\Private\Fonctionnel\Media\Sound.cpp" />
     <ClCompile Include="..\..\Source\PortfolioApp\Private\Fonctionnel\Media\Object3D.cpp" />
     <ClCompile Include="..\..\Source\PortfolioApp\Private\Fonctionnel\Media\MediaFactory.cpp" />
+    <ClCompile Include="..\..\Source\PortfolioApp\Private\Fonctionnel\Loader\LoaderPicture.cpp" />
+    <ClCompile Include="..\..\Source\PortfolioApp\Private\IHM\Display\DisplayFrame.cpp" />
   </ItemGroup>
 </Project>

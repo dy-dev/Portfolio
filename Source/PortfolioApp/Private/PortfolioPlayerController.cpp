@@ -43,19 +43,18 @@ TArray<FString> APortFolioPlayerController::GetSubDirectoriesFromController()
 
 void APortFolioPlayerController::CategoryButtonClicked(UCategory_Button* p_Button)
 {
-	if (m_pContentManager->ManageContent() != nullptr)
-	{
-		//m_pScrollBox->FillButtons(p_pController);
-	}
-	else
-	{
-		//displayFrame
-	}
+	m_pDisplayUIManager->ManageExploreUI(m_pContentManager, this, p_Button);
 }
 
 void APortFolioPlayerController::FillImageArray(const FString& FilePath)
 {
 	//m_pImageLoader->CreateSearchPaths( FilePath, ImagesHolder );
 	//m_pFileSort->fillArray( FilePath, m_aObjectManager );
+}
+
+
+void APortFolioPlayerController::RegisterCategoryScrollBox(UCategories_ScrollBox* p_pCatSB)
+{
+	m_pDisplayUIManager->setCategoriesScrollBox(p_pCatSB);
 }
 
