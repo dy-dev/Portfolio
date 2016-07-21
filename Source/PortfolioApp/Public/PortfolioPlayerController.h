@@ -11,7 +11,7 @@ class UAnimLoader;
 class UImagesHolder;
 class ContentManager;
 class DirectoryManager;
-class DisplayUIManager;
+class UDisplayUIManager;
 class UCategory_Button;
 class UCategories_ScrollBox;
 
@@ -33,6 +33,9 @@ public:
 	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Portfolio Images")
 		UAnimLoader* AnimLoader;
 
+	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Portfolio Images")
+		UDisplayUIManager* m_pDisplayUIManager;
+
 	UFUNCTION(BlueprintCallable, Category = "Portfolio Images")
 		void FillImageArray(const FString& FilePath);
 
@@ -52,5 +55,4 @@ protected:
 private:
 	//UImageLoader* m_pImageLoader;
 	ContentManager* m_pContentManager;
-	DisplayUIManager* m_pDisplayUIManager;
 };

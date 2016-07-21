@@ -30,7 +30,7 @@ void APortFolioPlayerController::BeginPlay()
 	AnimLoader = NewObject<UAnimLoader>(UImagesHolder::StaticClass());
 	ImagesHolder = NewObject<UImagesHolder>(UImagesHolder::StaticClass());
 	m_pContentManager = new ContentManager();
-	m_pDisplayUIManager = new DisplayUIManager();
+	//m_pDisplayUIManager = NewObject<UDisplayUIManager>(UDisplayUIManager::StaticClass());
 
 
 }
@@ -43,7 +43,10 @@ TArray<FString> APortFolioPlayerController::GetSubDirectoriesFromController()
 
 void APortFolioPlayerController::CategoryButtonClicked(UCategory_Button* p_Button)
 {
-	m_pDisplayUIManager->ManageExploreUI(m_pContentManager, this, p_Button);
+	if (m_pDisplayUIManager != nullptr)
+	{
+		m_pDisplayUIManager->ManageExploreUI(m_pContentManager, this, p_Button);
+	}
 }
 
 void APortFolioPlayerController::FillImageArray(const FString& FilePath)
@@ -55,6 +58,9 @@ void APortFolioPlayerController::FillImageArray(const FString& FilePath)
 
 void APortFolioPlayerController::RegisterCategoryScrollBox(UCategories_ScrollBox* p_pCatSB)
 {
-	m_pDisplayUIManager->setCategoriesScrollBox(p_pCatSB);
+	if (m_pDisplayUIManager != nullptr)
+	{
+		m_pDisplayUIManager->setCategoriesScrollBox(p_pCatSB);
+	}
 }
 

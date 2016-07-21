@@ -3,15 +3,22 @@
 #include <string>
 #include "Enums.h"
 
-class Media
+#include "Media.generated.h"
+
+UCLASS(Blueprintable)
+class UMedia : public UObject
 {
+	GENERATED_BODY()
+
 public:
-	Media();
-	~Media();
+	UMedia();
+	~UMedia();
+	virtual void Initializer(FString p_sPath, FString p_sFullPath, uint8 p_sExtension);
+
 
 protected:
 	FString m_sFullPath;
-	std::string m_sName;
+	FString m_sName;
 	std::string m_sArtist;
 	std::string m_sReleaseDate;
 	std::string m_sType;

@@ -2,29 +2,42 @@
 
 #include "Picture.h"
 
-Picture::Picture(FString p_sPath, uint8 p_iExtension)
+UPicture::UPicture()
 {
-	m_sFullPath = p_sPath;
 	m_sType = "Picture";
-	m_iExtension = p_iExtension;
 	m_TexturePicture = nullptr;
+	m_LoaderPicture = nullptr;
+}
+
+//UPicture::UPicture(FString p_sPath, uint8 p_iExtension)
+//{
+//	m_sFullPath = p_sPath;
+//	m_sType = "Picture";
+//	m_iExtension = p_iExtension;
+//	m_TexturePicture = nullptr;
+//	m_LoaderPicture = new LoaderPicture();
+//	FillData();
+//
+//}
+
+void UPicture::Initializer(FString p_sPath, FString p_sFullPath, uint8 p_sExtension)
+{
+	Super::Initializer(p_sPath, p_sFullPath, p_sExtension);
 	m_LoaderPicture = new LoaderPicture();
 	FillData();
-
 }
 
-
-Picture::~Picture()
+UPicture::~UPicture()
 {
 }
 
-FString Picture::GetFullPath()
+FString UPicture::GetFullPath()
 {
 	return m_sFullPath;
 }
 
 
-void Picture::FillData()
+void UPicture::FillData()
 {
 	if (m_LoaderPicture != nullptr)
 	{

@@ -2,7 +2,7 @@
 
 #include "Media.h"
 
-class Sound : public Media
+class Sound : public UMedia
 {
 public:
 	Sound(uint8 p_iExtension);

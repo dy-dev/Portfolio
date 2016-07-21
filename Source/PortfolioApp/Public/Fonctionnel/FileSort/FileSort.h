@@ -1,7 +1,9 @@
 #pragma once
+
+#include <Runtime/Core/Public/Containers/Map.h>
 #include <utility>
 
-class Media;
+class UMedia;
 
 class FileSort
 {
@@ -11,10 +13,10 @@ public:
 
 	//bool sortArray(FString p_sPath);
 
-	TArray<std::pair < FString, Media* >>& PrepareFiles(FString p_sPath);
+	TArray<TPair < FString, UMedia* >>& PrepareFiles(FString p_sPath);
 
 private :
-	TArray<std::pair < FString, Media* >> m_vSortedAssociateNameToMedia;
+	TArray<TPair < FString, UMedia* >> m_vSortedAssociateNameToMedia;
 	TArray<FString> m_asSortedFiles;
 
 };

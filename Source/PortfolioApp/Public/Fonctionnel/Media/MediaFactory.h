@@ -5,7 +5,7 @@
 #include "Enums.h"
 
 
-class Media;
+class UMedia;
 
 
 
@@ -14,7 +14,7 @@ class MediaFactory
 public:
 	static MediaFactory* getInstance();
 
-	Media* createMedia(FString p_sPath);
+	UMedia* createMedia(FString p_sPath, FString p_sFullPath);
 	TPair<EMedia, EExtension> returnType(FString p_sPath);
 	EExtension returnExtension(FString p_sExtension);
 

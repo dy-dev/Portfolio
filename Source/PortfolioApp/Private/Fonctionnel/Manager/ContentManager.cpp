@@ -33,7 +33,7 @@ void ContentManager::SetCurrentPathFromContentManager(FString p_sPath)
 	m_pDirectoryManager->SetCurrentPath(p_sPath);
 }
 
-TArray<std::pair < FString, Media* >>* ContentManager::ManageContent()
+TArray<TPair < FString, UMedia* >>* ContentManager::ManageContent()
 {
 	if (m_pDirectoryManager->GetSubDirectories().Num() == 0)
 	{

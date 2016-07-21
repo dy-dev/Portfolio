@@ -220,6 +220,7 @@
     <NMakeOutput>..\..\Binaries\Win64\PortfolioApp-Win64-Shipping.exe</NMakeOutput>
   </PropertyGroup>
   <ItemGroup>
+    <ClCompile Include="..\..\Source\PortfolioApp\Private\Test.cpp" />
     <None Include="..\..\PortfolioApp.uproject" />
     <None Include="..\..\Source\PortfolioApp.Target.cs" />
     <None Include="..\..\Source\PortfolioAppEditor.Target.cs" />
@@ -244,6 +245,7 @@
     <ClInclude Include="..\..\Source\PortfolioApp\Public\Fonctionnel\Media\Sound.h" />
     <ClInclude Include="..\..\Source\PortfolioApp\Public\IHM\Display\DisplayFrame.h" />
     <ClInclude Include="..\..\Source\PortfolioApp\Public\IHM\Manager\DisplayUIManager.h" />
+    <ClInclude Include="..\..\Source\PortfolioApp\Public\Test.h" />
     <ClInclude Include="..\..\Source\PortfolioApp\revision.h" />
     <ClInclude Include="..\..\Source\PortfolioApp\assimp\ai_assert.h" />
     <ClInclude Include="..\..\Source\PortfolioApp\assimp\anim.h" />

@@ -1,5 +1,6 @@
 #pragma once
 
+#include <Runtime/Core/Public/Containers/Map.h>
 #include "FileSort.h"
 
 
@@ -15,7 +16,7 @@ public:
 
 	TArray<FString> GetSubDirectoriesFromContentManager();
 	void SetCurrentPathFromContentManager(FString p_sPath);
-	TArray<std::pair < FString, Media* >>* ManageContent();
+	TArray<TPair < FString, UMedia* >>* ManageContent();
 
 
 private :

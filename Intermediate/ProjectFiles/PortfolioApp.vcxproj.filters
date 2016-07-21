@@ -702,6 +702,9 @@
     <ClInclude Include="..\..\Source\PortfolioApp\Public\Fonctionnel\Media\Enums.h" />
     <ClInclude Include="..\..\Source\PortfolioApp\Public\Fonctionnel\Loader\LoaderPicture.h" />
     <ClInclude Include="..\..\Source\PortfolioApp\Public\IHM\Display\DisplayFrame.h" />
+    <ClInclude Include="..\..\Source\PortfolioApp\Public\Test.h">
+      <Filter>Source\PortfolioApp\Public</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="..\..\Source\PortfolioApp\Private\Fonctionnel\Manager\ContentManager.cpp" />
@@ -717,5 +720,8 @@
     <ClCompile Include="..\..\Source\PortfolioApp\Private\Fonctionnel\Media\MediaFactory.cpp" />
     <ClCompile Include="..\..\Source\PortfolioApp\Private\Fonctionnel\Loader\LoaderPicture.cpp" />
     <ClCompile Include="..\..\Source\PortfolioApp\Private\IHM\Display\DisplayFrame.cpp" />
+    <ClCompile Include="..\..\Source\PortfolioApp\Private\Test.cpp">
+      <Filter>Source\PortfolioApp\Private</Filter>
+    </ClCompile>
   </ItemGroup>
 </Project>

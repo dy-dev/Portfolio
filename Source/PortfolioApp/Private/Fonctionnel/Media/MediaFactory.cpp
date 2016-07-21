@@ -31,16 +31,18 @@ MediaFactory* MediaFactory::getInstance()
 		return uniqueInstance;
 }
 
-Media* MediaFactory::createMedia(FString p_sPath)
+UMedia* MediaFactory::createMedia(FString p_sPath, FString p_sFullPath)
 {
 
-	Media* media = nullptr;
+	UMedia* media = nullptr;
 	FString sExtension = FPaths::GetExtension(p_sPath).ToLower();
 	TPair<EMedia, EExtension> iType = MediaFactory::returnType(sExtension);
 	switch ((uint8) iType.Key )
 	{
 	case (uint8) EMedia::EPicture :
-		media = new Picture(p_sPath, (uint8) iType.Value);
+		//media = new UPicture(p_sPath, (uint8) iType.Value);
+		media = NewObject<UPicture>(UPicture::StaticClass());
+		media->Initializer(p_sPath, p_sFullPath, (uint8)iType.Value);
 		break;
 	case (uint8) EMedia::EAnim :
 		media = new Anim((uint8) iType.Value);

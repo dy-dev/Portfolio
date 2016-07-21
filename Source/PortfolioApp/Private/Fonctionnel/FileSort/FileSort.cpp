@@ -70,14 +70,15 @@ FileSort::~FileSort()
 //}
 
 
-TArray<std::pair < FString, Media* >>& FileSort::PrepareFiles(FString p_sPath)
+TArray<TPair < FString, UMedia* >>& FileSort::PrepareFiles(FString p_sPath)
 {
-	GetFiles(p_sPath, m_asSortedFiles, false); //We put all the files in Files
+	GetFiles(p_sPath, m_asSortedFiles, false); //We put all the files in m_asSortedFiles
 	MediaFactory* factory = MediaFactory::getInstance();
 	for (auto name : m_asSortedFiles)
 	{
-		Media* mediaObj = factory->createMedia(name);
-		m_vSortedAssociateNameToMedia.Add(std::pair < FString, Media* >(name, mediaObj));
+		FString fullName = p_sPath + "/" + name;
+		UMedia* mediaObj = factory->createMedia(name, fullName);
+		m_vSortedAssociateNameToMedia.Add(TPairInitializer < FString, UMedia* >(name, mediaObj));
 	}
 
 	return m_vSortedAssociateNameToMedia;
