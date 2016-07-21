@@ -36,8 +36,9 @@ void LoaderPicture::WrapImage(FString p_sFullPath, uint8 p_iExtension)
 }
 
 						
-void LoaderPicture::LoadTexture(FString p_sFullPath, UTexture2D* p_TexturePicture)
+UTexture2D* LoaderPicture::LoadTexture(FString p_sFullPath)
 {
+	UTexture2D* p_TexturePicture = nullptr;
 	if (m_ImageWrapperPtr.IsValid() && m_ImageWrapperPtr->SetCompressed(m_RawFileData.GetData(), m_RawFileData.Num()))
 	{
 		const TArray<uint8>* UncompressedBGRA = NULL;
@@ -55,4 +56,5 @@ void LoaderPicture::LoadTexture(FString p_sFullPath, UTexture2D* p_TexturePictur
 			p_TexturePicture->UpdateResource();
 		}
 	}
+	return p_TexturePicture;
 }

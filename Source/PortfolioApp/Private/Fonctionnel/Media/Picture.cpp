@@ -42,6 +42,6 @@ void UPicture::FillData()
 	if (m_LoaderPicture != nullptr)
 	{
 		m_LoaderPicture->WrapImage(m_sFullPath, m_iExtension);
-		m_LoaderPicture->LoadTexture(m_sFullPath, m_TexturePicture);
+		m_TexturePicture = m_LoaderPicture->LoadTexture(m_sFullPath);
 	}
 }

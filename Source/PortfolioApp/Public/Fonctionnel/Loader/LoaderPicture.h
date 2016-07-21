@@ -13,7 +13,7 @@ public:
 	~LoaderPicture();
 
 	void WrapImage(FString p_sFullPath, uint8 p_iExtension);
-	void LoadTexture(FString p_sFullPath, UTexture2D* p_TexturePicture);
+	UTexture2D* LoadTexture(FString p_sFullPath);
 
 private :
 	IImageWrapperPtr m_ImageWrapperPtr;
